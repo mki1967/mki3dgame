@@ -115,7 +115,7 @@ func main() {
 		}
 
 		// if( game.Paused ) { // old version
-		if game.Paused.get() { // new version
+		if game.Paused.Get() { // new version
 			game.CancelAction()
 			glfw.WaitEvents()
 			game.ProbeTime()
@@ -123,7 +123,7 @@ func main() {
 			game.ProbeTime()
 			game.Update()
 			// game.Paused = game.PauseRequest.TestAndCancel() // check for pause
-			game.Paused.set(game.PauseRequest.TestAndCancel()) // check for pause -- new version
+			// game.Paused.Set(game.PauseRequest.TestAndCancel()) // check for pause -- new version
 			glfw.PollEvents()
 		}
 		game.Redraw()

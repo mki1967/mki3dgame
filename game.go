@@ -58,9 +58,9 @@ type Mki3dGame struct {
 	CurrentAction func()                                     // current action of the player
 	ActionSectors [VerticalSectors][HorizontalSectors]func() // functions of the mouse actions
 
-	PauseRequest Flag // set by a goroutine to request pause
+	// PauseRequest Flag // set by a goroutine to request pause
 	// Paused bool // true if game is paused
-	Paused SharedBool // true if game is paused
+	Paused SharedBool // true if game is paused - shared version
 
 	WasAction Flag // set ech time the user action is executed
 }
@@ -102,7 +102,7 @@ func MakeEmptyGame(pathToAssets string, window *glfw.Window) (*Mki3dGame, error)
 	window.SetKeyCallback(game.KeyCallback)
 	window.SetMouseButtonCallback(game.Mki3dMouseButtonCallback)
 
-	game.PauseRequest = MakeFlag()
+	// game.PauseRequest = MakeFlag()
 	game.WasAction = MakeFlag()
 
 	game.Paused = MakeSharedBool() // new version

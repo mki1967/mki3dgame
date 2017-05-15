@@ -12,8 +12,8 @@ type SharedBoolSet func(bool)
 
 // Type for bool variables shared by goroutines
 type SharedBool struct {
-	get SharedBoolGet
-	set SharedBoolSet
+	Get SharedBoolGet
+	Set SharedBoolSet
 }
 
 func MakeSharedBool() SharedBool {
@@ -44,6 +44,6 @@ func MakeSharedBool() SharedBool {
 		setChan <- v
 	}
 
-	return SharedBool{get: getter, set: setter}
+	return SharedBool{Get: getter, Set: setter}
 
 }

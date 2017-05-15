@@ -15,12 +15,14 @@ func (g *Mki3dGame) EcoFreezer() {
 	for {
 		time.Sleep(EcoFreezerDelay)
 		// if( ! g.Paused ) { // old version
-		if !g.Paused.get() { // new version
+		if !g.Paused.Get() { // new version
 			wasAction := g.WasAction.TestAndCancel()
 			// fmt.Println("EcoFreezer: Testing: wasAction =", wasAction )
 			if !wasAction {
-				fmt.Println("EcoFreezer: Setting PauseRequest ...")
-				g.PauseRequest.Set()
+				// fmt.Println("EcoFreezer: Setting PauseRequest ...")
+				fmt.Println("EcoFreezer: Setting Pause ...")
+				// g.PauseRequest.Set() // old version
+				g.Paused.Set(true) // new version
 			}
 		}
 	}
