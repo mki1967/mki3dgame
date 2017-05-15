@@ -6,8 +6,8 @@ import (
 	"github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/go-gl/mathgl/mgl32"
-	"github.com/mki1967/go-mki3d/mki3d"
 	"github.com/mki1967/go-mki3d/glmki3d"
+	"github.com/mki1967/go-mki3d/mki3d"
 	"math"
 	// "math/rand"
 	_ "image/png"
@@ -59,7 +59,8 @@ type Mki3dGame struct {
 	ActionSectors [VerticalSectors][HorizontalSectors]func() // functions of the mouse actions
 
 	PauseRequest Flag // set by a goroutine to request pause
-	Paused bool // true if game is paused
+	// Paused bool // true if game is paused
+	Paused SharedBool // true if game is paused
 
 	WasAction Flag // set ech time the user action is executed
 }
@@ -104,8 +105,10 @@ func MakeEmptyGame(pathToAssets string, window *glfw.Window) (*Mki3dGame, error)
 	game.PauseRequest = MakeFlag()
 	game.WasAction = MakeFlag()
 
+	game.Paused = MakeSharedBool() // new version
+
 	go game.EcoFreezer() // run concurrent eco-freezer goroutine
-	
+
 	return &game, nil
 
 }
@@ -450,7 +453,7 @@ func (game *Mki3dGame) Redraw() {
 		game.SectorsDSPtr.DrawStage()
 		gl.Enable(gl.DEPTH_TEST)
 	} else {
-		game.WasAction.Set(); // set for EcoFreezer
+		game.WasAction.Set() // set for EcoFreezer
 	}
 
 }

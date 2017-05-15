@@ -20,7 +20,9 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 	}
 
 	if action == glfw.Press {
-		g.Paused = false
+		// g.Paused = false // old version
+		g.Paused.set(false) // new version
+
 		// g := GamePtr // short name
 		switch {
 

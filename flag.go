@@ -1,7 +1,7 @@
 package main
 
-import(
-	// "fmt"
+import (
+// "fmt"
 )
 
 // Flag  can be concurrently accessed by gorutines.
@@ -10,7 +10,7 @@ import(
 type Flag chan bool
 
 // You have to use it to create a working Flag
-func MakeFlag() Flag{
+func MakeFlag() Flag {
 	return make(chan bool, 1)
 }
 
@@ -20,21 +20,20 @@ func (f Flag) Set() {
 	case f <- true:
 		// f was canceled, now it is set
 		return
-		
+
 	default:
 		// f was set before. Nothing to do
 		return
 	}
 }
 
-
 // Cancel the flag and return whether it was set before.
 func (f Flag) TestAndCancel() bool {
 	select {
-	case  <- f:
+	case <-f:
 		// f was set, return true. (Now f is canceled)
 		return true
-		
+
 	default:
 		// f was set canceled. Return false
 		return false

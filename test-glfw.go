@@ -107,7 +107,6 @@ func main() {
 	// main loop
 	for !window.ShouldClose() {
 
-
 		// Maintenance
 		window.SwapBuffers()
 		if doInMainThread != nil {
@@ -115,14 +114,16 @@ func main() {
 			doInMainThread = nil // done
 		}
 
-		if( game.Paused ) {
+		// if( game.Paused ) { // old version
+		if game.Paused.get() { // new version
 			game.CancelAction()
 			glfw.WaitEvents()
 			game.ProbeTime()
 		} else {
 			game.ProbeTime()
 			game.Update()
-			game.Paused = game.PauseRequest.TestAndCancel() // check for pause
+			// game.Paused = game.PauseRequest.TestAndCancel() // check for pause
+			game.Paused.set(game.PauseRequest.TestAndCancel()) // check for pause -- new version
 			glfw.PollEvents()
 		}
 		game.Redraw()

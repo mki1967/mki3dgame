@@ -1,0 +1,4 @@
+#!/bin/bash
+# running mki3game in THIS directory
+./mki3dgame assets
+
