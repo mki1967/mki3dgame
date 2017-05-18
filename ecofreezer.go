@@ -9,8 +9,8 @@ const EcoFreezerDelay = 15 * time.Second // EcoFrezer delay in milliseconds
 
 // EcoFreezer is a goroutine that sets g.PauseRequest if there was no action for a long period.
 func (g *Mki3dGame) EcoFreezer() {
-	fmt.Println("Starting EcoFreezer ...") // tests
-	g.WasAction.Set()                      // set before the first testing
+	// fmt.Println("Starting EcoFreezer ...") // tests
+	g.WasAction.Set() // set before the first testing
 
 	for {
 		time.Sleep(EcoFreezerDelay)
@@ -20,7 +20,7 @@ func (g *Mki3dGame) EcoFreezer() {
 			// fmt.Println("EcoFreezer: Testing: wasAction =", wasAction )
 			if !wasAction {
 				// fmt.Println("EcoFreezer: Setting PauseRequest ...")
-				fmt.Println("EcoFreezer: Setting Pause ...")
+				fmt.Println("AUTO-PAUSE")
 				// g.PauseRequest.Set() // old version
 				g.Paused.Set(true) // new version
 			}
