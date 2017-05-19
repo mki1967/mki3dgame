@@ -22,10 +22,12 @@ Just place the files in the respective sub-directories
 'stages', 'monsters', or 'tokens' of the main assets directory.
 Shapes are selected randomly from each sub-directory for each stage.
 
-This project have been moved from the collection of Go program demos at https://github.com/mki1967/test-go-mki3d.git
 To build the the game from the source code with Go compiler you need the following packages:
 *	"github.com/go-gl/gl/v3.3-core/gl"
 *	"github.com/go-gl/glfw/v3.2/glfw"
 *	"github.com/go-gl/mathgl/mgl32"
 *	"github.com/mki1967/go-mki3d/mki3d"
 *	"github.com/mki1967/go-mki3d/glmki3d"
+
+This project has been moved here from the collection of Go program demos at https://github.com/mki1967/test-go-mki3d.git
+
