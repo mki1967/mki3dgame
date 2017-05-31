@@ -3,7 +3,7 @@
 package main
 
 import (
-	"errors"
+	// "errors"
 	"fmt"
 	"github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
@@ -50,9 +50,22 @@ var doInMainThread func() = nil
 
 func main() {
 
+	pathToAssets := "assets"
+
+	gopath, isGopath := os.LookupEnv("GOPATH")
+	// pathToAssets := os.Getenv("GOPATH") + "/src/github.com/mki1967/mki3dgame/assets"
+	if isGopath {
+		pathToAssets = gopath + "/src/github.com/mki1967/mki3dgame/assets"
+	}
+
 	// get path to assets from command line argument
 	if len(os.Args) < 2 {
-		panic(errors.New(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** "))
+		// panic(errors.New(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** "))
+		fmt.Println(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** ")
+		fmt.Println(" Trying to use default vale: " + pathToAssets)
+
+	} else {
+		pathToAssets = os.Args[1]
 	}
 
 	// fragments from https://github.com/go-gl/examples/blob/master/gl41core-cube/cube.go
@@ -89,14 +102,14 @@ func main() {
 	gl.DepthFunc(gl.LESS)
 	gl.ClearColor(0.0, 0.0, 0.3, 1.0)
 
-	// message(helpText) // initial help message
-	fmt.Println(helpText)
-
 	// init game structure from assets and the game window
-	game, err := MakeEmptyGame(os.Args[1], window)
+	game, err := MakeEmptyGame(pathToAssets, window)
 	if err != nil {
 		panic(err)
 	}
+
+	// message(helpText) // initial help message
+	fmt.Println(helpText)
 
 	// load the first stage
 	err = game.Init()

@@ -31,3 +31,14 @@ To build the the game from the source code with Go compiler you need the followi
 
 This project has been moved here from the collection of Go program demos at https://github.com/mki1967/test-go-mki3d.git
 
+
+INSTALLATION FROM THE SOURCE CODE REPOSITORY
+--------------------------------------------
+
+* Install Go language on your system, unless you already have it. (See: https://golang.org/doc/install , do not forget to set the `GOPATH` environment variable)
+* On Linux system you may need to install `libgl1-mesa-dev` (See: https://github.com/go-gl/gl )
+* Try to use the command: `go get -u github.com/mki1967/mki3dgame`
+* The binary compiled file should be installed in `${GOPATH}/bin` directory.
+* Note that you can provide your own path to the assets directory as a command line argument.
+  Otherwise the program will try to find the `assets` directory either in  `${GOPATH}/src/github.com/mki1967/mki3dgame/`
+  or (if `GOPATH` is not set) in the current directory.
