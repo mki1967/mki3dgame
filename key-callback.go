@@ -67,6 +67,10 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 		case key == glfw.KeyL && mods == 0: /* light */
 			g.StageDSPtr.UniPtr.LightUni = g.StageDSPtr.UniPtr.ViewUni.Mat3().Inv().Mul3x1(mgl32.Vec3{0, 0, 1}).Normalize()
 
+		case key == glfw.KeyX && mods == 0: /* light */
+			fmt.Println("RELOADING RANDOM STAGE ...")
+			g.NextStage()
+
 		case key == glfw.KeyZ && mods == 0: /* zoom out */
 			width, height := w.GetSize()
 			zy := g.StageDSPtr.Mki3dPtr.Projection.ZoomY / 1.1

@@ -8,8 +8,9 @@ Key press actions:
   Arrow keys - rotate observer
   Shift + Arrow keys  - move observer sideways
   B, F - move observer backward or forward
-  L - set the diffuse light directiorn perpendicular to the screen
+  L - set the diffuse light direction perpendicular to the screen
   P - pause the game
+  X - reload random stage
 
 Sectors action layout:
 ----------------------
