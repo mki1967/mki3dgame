@@ -2,6 +2,9 @@
 	"ImportPath": "github.com/mki1967/mki3dgame",
 	"GoVersion": "go1.6",
 	"GodepVersion": "v79",
+	"Packages": [
+		"./..."
+	],
 	"Deps": [
 		{
 			"ImportPath": "github.com/go-gl/gl/v3.3-core/gl",
