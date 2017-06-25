@@ -1,0 +1,34 @@
+{
+	"ImportPath": "github.com/mki1967/mki3dgame",
+	"GoVersion": "go1.6",
+	"GodepVersion": "v79",
+	"Deps": [
+		{
+			"ImportPath": "github.com/go-gl/gl/v3.3-core/gl",
+			"Rev": "887577e03012940ff715b6af70a9ea1b9f9e60bb"
+		},
+		{
+			"ImportPath": "github.com/go-gl/glfw/v3.2/glfw",
+			"Rev": "45517cf5568747f99bb4b0b4abae9fa3cd5f85ed"
+		},
+		{
+			"ImportPath": "github.com/go-gl/mathgl/mgl32",
+			"Comment": "Go1.2.2-117-g9e3ea3e",
+			"Rev": "9e3ea3e806141087fbb83a8a8e7038bf73eff120"
+		},
+		{
+			"ImportPath": "github.com/mki1967/go-mki3d/glmki3d",
+			"Comment": "v1.0",
+			"Rev": "ed2dacd0020772b58a738d04616e86314370ec28"
+		},
+		{
+			"ImportPath": "github.com/mki1967/go-mki3d/mki3d",
+			"Comment": "v1.0",
+			"Rev": "ed2dacd0020772b58a738d04616e86314370ec28"
+		},
+		{
+			"ImportPath": "golang.org/x/image/math/f32",
+			"Rev": "426cfd8eeb6e08ab1932954e09e3c2cb2bc6e36d"
+		}
+	]
+}
