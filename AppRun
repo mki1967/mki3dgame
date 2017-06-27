@@ -1,0 +1,7 @@
+#!/bin/sh
+
+APP_DIR=`dirname $0`
+APP_DIR=`cd "$APP_DIR";pwd`
+
+MKI3DGAME_ASSETS="$APP_DIR/assets"; export MKI3DGAME_ASSETS
+exec "$APP_DIR/mki3dgame" "$@"

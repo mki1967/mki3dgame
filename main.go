@@ -48,25 +48,38 @@ func message(msg string) error {
 
 var doInMainThread func() = nil
 
-func main() {
-
+func pathToAssets() string {
 	pathToAssets := "assets"
 
 	gopath, isGopath := os.LookupEnv("GOPATH")
 	// pathToAssets := os.Getenv("GOPATH") + "/src/github.com/mki1967/mki3dgame/assets"
 	if isGopath {
 		pathToAssets = gopath + "/src/github.com/mki1967/mki3dgame/assets"
+		fmt.Println("If you have built from source code, then  you should have some assests in: " + pathToAssets)
+	}
+
+	envPath, isEnvPath := os.LookupEnv("MKI3DGAME_ASSETS")
+	if isEnvPath {
+		fmt.Println("environment variable MKI3DGAME_ASSETS is set to " + envPath) // test
+		pathToAssets = envPath
 	}
 
 	// get path to assets from command line argument
 	if len(os.Args) < 2 {
 		// panic(errors.New(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** "))
-		fmt.Println(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** ")
+		fmt.Println(" *** YOU CAN PROVIDE PATH TO YOUR ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** ")
 		fmt.Println(" Trying to use default vale: " + pathToAssets)
 
 	} else {
+		fmt.Println("Path to assets from command line argument: " + os.Args[1])
 		pathToAssets = os.Args[1]
 	}
+
+	return pathToAssets
+}
+
+func main() {
+	pathToAssets := pathToAssets()
 
 	// fragments from https://github.com/go-gl/examples/blob/master/gl41core-cube/cube.go
 
