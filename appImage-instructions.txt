@@ -1,0 +1,4 @@
+$ go build                                        # in the source directory build binary executable
+$ cd ..                                           # go out of the source directory
+$ appimagetool-x86_64.AppImage mki3dgame          # the source direcory is named 'mki3dgame'   
+$ ls -l mki3dgame-x86_64.AppImage                 # mki3dgame-x86_64.AppImage is the produced AppImage (check the date and size ;-)
