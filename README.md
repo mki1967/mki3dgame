@@ -2,6 +2,9 @@ This game uses designs produced with MKI3D web 3D editor (see: https://mki1967.g
 
 See also on: 
 [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/)
+or Bintray: 
+[ ![Download](https://api.bintray.com/packages/mki1967/mki3d-generic/mki3dgame/images/download.svg) ](https://bintray.com/mki1967/mki3d-generic/mki3dgame/_latestVersion)
+
 
 In the game, you have to collect tokens scattered in the stages and avoid being captured by the monsters.
 (A short screen-cast is available at: https://youtu.be/vp6nhvOqhdU . )
