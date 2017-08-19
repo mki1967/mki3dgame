@@ -4,3 +4,4 @@ Type=Application
 Icon=mkisg_icon_48x48
 Terminal=true
 Exec=mki3dgame
+Categories=Game
