@@ -4,9 +4,10 @@ const helpText = `
 Key press actions:
 ------------------
 
-  H - this help screen
+  H - this help message
   Arrow keys - rotate observer
   Shift + Arrow keys  - move observer sideways
+  Space - set the player upright
   B, F - move observer backward or forward
   L - set the diffuse light direction perpendicular to the screen
   P - pause the game
@@ -30,4 +31,5 @@ Sectors action layout:
 
 MF, MB, MU, MD, ML, MR - move forward, backward, up, down, left and right
 RU, RD, RL, RR - rotate up, down, left and right
+LV - set the player upright
 `
