@@ -11,6 +11,7 @@ import (
 )
 
 func (g *Mki3dGame) Mki3dMouseButtonCallback(w *glfw.Window, button glfw.MouseButton, action glfw.Action, mod glfw.ModifierKey) {
+	g.JustCollected = false // stop celebrations
 	if action == glfw.Release {
 		g.CancelAction()
 		return

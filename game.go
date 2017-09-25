@@ -9,6 +9,7 @@ import (
 	"github.com/mki1967/go-mki3d/glmki3d"
 	"github.com/mki1967/go-mki3d/mki3d"
 	"math"
+	// "time"
 	// "math/rand"
 	_ "image/png"
 )
@@ -63,6 +64,8 @@ type Mki3dGame struct {
 	Paused SharedBool // true if game is paused - shared version
 
 	WasAction Flag // set ech time the user action is executed
+
+	JustCollected bool // token has been just collected! Do some clebrations in Redraw ...
 }
 
 // Make game structure with the shader and without any data.
@@ -437,16 +440,22 @@ func (game *Mki3dGame) NextStage() {
 // Redraw the game stage
 func (game *Mki3dGame) Redraw() {
 	gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT) // to be moved to redraw ?
-	// draw stage
-	game.StageDSPtr.SetBackgroundColor()
-	game.StageDSPtr.DrawStage()
-	// draw frame
-	game.FrameDSPtr.DrawModel()
-	// draw tokens
-	game.DrawTokens()
-	// draw monsters
-	game.DrawMonsters()
-
+	if game.JustCollected {
+		gl.ClearColor(1.0, 0.4, 0.4, 1.0)
+		gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
+		// game.JustCollected = false
+		// time.Sleep(time.Millisecond * 500)
+	} else {
+		// draw stage
+		game.StageDSPtr.SetBackgroundColor()
+		game.StageDSPtr.DrawStage()
+		// draw frame
+		game.FrameDSPtr.DrawModel()
+		// draw tokens
+		game.DrawTokens()
+		// draw monsters
+		game.DrawMonsters()
+	}
 	if game.CurrentAction == nil {
 		// draw sectors
 		gl.Disable(gl.DEPTH_TEST)

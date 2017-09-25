@@ -54,6 +54,7 @@ func (t *TokenType) Update(g *Mki3dGame) {
 		g.CancelAction()
 		// some celebrations ...
 		fmt.Println("COLLECTED !!! (", g.TokensRemaining, " remaining)")
+		g.JustCollected = true
 
 	}
 }
