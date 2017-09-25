@@ -11,10 +11,10 @@ import (
 )
 
 func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, action glfw.Action, mods glfw.ModifierKey) {
-	g.JustCollected = false // stop celebrations
 	if action == glfw.Release {
 		if action == glfw.Release {
 			g.CancelAction()
+			g.JustCollected = false // stop celebrations
 			return
 		}
 
