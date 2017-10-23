@@ -13,9 +13,9 @@ import (
 	"log"
 	"math/rand"
 	"os"
-	"path/filepath"
+	// "path/filepath"
 	"runtime"
-	"strings"
+	// "strings"
 	"time"
 )
 
@@ -59,8 +59,8 @@ func pathToAssets() string {
 		pathToAssets = gopath + "/src/github.com/mki1967/mki3dgame/assets"
 		fmt.Println("If you have built from source code, then  you should have some assests in: " + pathToAssets)
 	}
-
-	// check if it is installed in '/usr/...' directory
+/*
+	// check if it is installed in '/usr/...' directory  -- requires Go version >= 1.8
 	execPath, err := os.Executable()
 	fmt.Printf("execPath = %v\n", execPath) // test
 	if err == nil && strings.Contains(execPath, "/usr/") {
@@ -69,7 +69,7 @@ func pathToAssets() string {
 		pathToAssets = filepath.Dir(execDir) + "/share/games/mki3game/assets/"
 		fmt.Println("If you have installed from distribution, then  you should have some assests in: " + pathToAssets)
 	}
-
+*/
 	envPath, isEnvPath := os.LookupEnv("MKI3DGAME_ASSETS")
 	if isEnvPath {
 		fmt.Println("environment variable MKI3DGAME_ASSETS is set to " + envPath) // test
