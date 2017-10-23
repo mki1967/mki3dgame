@@ -1,18 +1,19 @@
 name: mki3dgame-snap # you probably want to 'snapcraft register <name>'
-version: '0.1' # just for humans, typically '1.2+git' or '1.3.2'
-summary: Single-line elevator pitch for your amazing snap # 79 char long summary
+version: '0.2' # just for humans, typically '1.2+git' or '1.3.2'
+summary: A game of finding tokens in 3D stages among the flying monsters. # 79 char long summary
 description: |
-  This is my-snap's description. You have a paragraph or two to tell the
-  most important story about your snap. Keep it under 100 words though,
-  we live in tweetspace and your description wants to look good in the snap
-  store.
+  In the game you have to find and collect tokens in 3D stages
+  and avoid being captured by the monsters.
+  See ' https://github.com/mki1967/mki3dgame ' for more info.
+  (The stages are designed with MKI3D editor 'https://mki1967.github.io/mki3d/').
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: stable # devel # must be 'stable' to release into candidate/stable channels
+confinement: strict # devmode # use 'strict' once you have the right plugs and slots
 
 apps:
   mki3dgame-snap:
     command: mki3dgame-snap-wrapper.bash
+    desktop: usr/share/applications/mki3dgame.desktop 
     plugs:
       - x11
       - opengl

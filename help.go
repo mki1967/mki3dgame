@@ -1,6 +1,14 @@
 package main
 
 const helpText = `
+MKI3DGAME (see: https://github.com/mki1967/mki3dgame )
+======================================================
+
+Collect the tokens and avoid the monsters.
+(You can be captured by a monster ;-) 
+
+Use the keyboard:
+
 Key press actions:
 ------------------
 
@@ -12,6 +20,8 @@ Key press actions:
   L - set the diffuse light direction perpendicular to the screen
   P - pause the game
   X - reload random stage
+
+Or press the mouse on the screen sectors:
 
 Sectors action layout:
 ----------------------

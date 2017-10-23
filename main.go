@@ -32,7 +32,9 @@ var Window *glfw.Window // main window
 
 func message(msg string) error {
 	fmt.Println(msg)
-	err := Window.Iconify()
+	err:= error(nil)
+	/* May cause problems if the process runs in the background ...
+	err = Window.Iconify()
 	if err != nil {
 		return err
 	}
@@ -45,6 +47,7 @@ func message(msg string) error {
 	// err = Window.Maximize()
 	Window.Show()
 	fmt.Println("RESUMED.")
+*/
 	return err
 }
 
@@ -52,14 +55,14 @@ var doInMainThread func() = nil
 
 func pathToAssets() string {
 	pathToAssets := "assets"
-
+/*
 	gopath, isGopath := os.LookupEnv("GOPATH")
 	// pathToAssets := os.Getenv("GOPATH") + "/src/github.com/mki1967/mki3dgame/assets"
 	if isGopath {
 		pathToAssets = gopath + "/src/github.com/mki1967/mki3dgame/assets"
 		fmt.Println("If you have built from source code, then  you should have some assests in: " + pathToAssets)
 	}
-/*
+
 	// check if it is installed in '/usr/...' directory  -- requires Go version >= 1.8
 	execPath, err := os.Executable()
 	fmt.Printf("execPath = %v\n", execPath) // test
@@ -72,18 +75,18 @@ func pathToAssets() string {
 */
 	envPath, isEnvPath := os.LookupEnv("MKI3DGAME_ASSETS")
 	if isEnvPath {
-		fmt.Println("environment variable MKI3DGAME_ASSETS is set to " + envPath) // test
+		// fmt.Println("environment variable MKI3DGAME_ASSETS is set to " + envPath) // test
 		pathToAssets = envPath
 	}
 
 	// get path to assets from command line argument
 	if len(os.Args) < 2 {
 		// panic(errors.New(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** "))
-		fmt.Println(" *** YOU CAN PROVIDE PATH TO YOUR ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** ")
-		fmt.Println(" Trying to use default vale: " + pathToAssets)
+		// fmt.Println(" *** YOU CAN PROVIDE PATH TO YOUR ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** ")
+		fmt.Println(" Trying to use default path to assets: '" + pathToAssets+"'")
 
 	} else {
-		fmt.Println("Path to assets from command line argument: " + os.Args[1])
+		// fmt.Println("Path to assets from command line argument: " + os.Args[1])
 		pathToAssets = os.Args[1]
 	}
 
