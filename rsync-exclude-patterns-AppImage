@@ -1,0 +1,23 @@
+# Files to be ignored when rsync-ing to 'build-AppImage' subdirectory 
+
+# editor backup files
+*~
+# Git-related files
+.git*
+# source files
+*.go
+# this file
+rsync-exclude-patterns-*
+*.snap
+screen-shot.png
+# build sub-directories
+build-*
+# snap-related ...
+snap
+mki3dgame-snap-wrapper.bash
+# other files not needed in the executable bundle ...
+appImage-instructions.txt
+make-AppImage.bash
+run-mki3dgame
+runme
+
