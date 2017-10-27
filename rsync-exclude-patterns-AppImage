@@ -4,8 +4,10 @@
 *~
 # Git-related files
 .git*
-# source files
-*.go
+
+# source files (uncomment the line below if you don't want them in the package)
+# *.go
+
 # this file
 rsync-exclude-patterns-*
 *.snap
