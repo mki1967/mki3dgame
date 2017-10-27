@@ -14,9 +14,6 @@ rsync-exclude-patterns-*
 screen-shot.png
 # build sub-directories
 build-*
-# snap-related ...
-snap
-mki3dgame-snap-wrapper.bash
 # other files not needed in the executable bundle ...
 appImage-instructions.txt
 make-AppImage.bash

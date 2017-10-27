@@ -1,29 +1,31 @@
 #!/bin/bash
 
-# A naive Bash script for making AppImage
+# A naive Bash script for making snap
 # It is assumed that you are using bash shell and you have:
 #  - Go compiler installed, and
 #  - $GOPATH set properly, and
 #  - the Go packagaes 'github.com/go-gl/{gl,glfw,mathgl}' and 'golang.org/x' installed
-#  - the appimagetool-x86_64.AppImage on your $PATH (see https://github.com/AppImage/AppImageKit )
+#  - sapcraft installed
 #  - rsync installed
 
 ./make-mki3game.bash
 
 echo 'Preparing for AppImage ...'
-mkdir build-AppImage # do everything in the 'build' directory
+mkdir build-snap # do everything in the 'build' directory
 
 
 #  It is assumed that this directory is called 'mki3dgame'
 pushd ../ # Go to the parent directory.
 echo 'rsync-ing ...'
-rsync -av --exclude-from=mki3dgame/rsync-exclude-patterns-AppImage mki3dgame mki3dgame/build-AppImage/
+rsync -av --exclude-from=mki3dgame/rsync-exclude-patterns-snap mki3dgame mki3dgame/build-snap/
 popd    # return to the directory
 
-pushd build-AppImage/ # Go to the build directory.
-echo 'Building AppImage ...'
-appimagetool-x86_64.AppImage mki3dgame
+pushd build-snap/mki3dgame # Go to the build directory.
+echo 'Building snap ...'
+snapcraft
+mv mki3dgame-snap_*.snap ../
+cd ../
 rm -rf mki3dgame/ # remove the rsync-ed directory
 popd    # return to the directory
 
-echo 'Your AppImage should be in: ./build-AppImage/mki3dgame-x86_64.AppImage'
+echo 'Your snap should be in: ./build-snap/mki3dgame-snap_[...].snap'
