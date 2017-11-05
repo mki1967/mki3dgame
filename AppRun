@@ -2,6 +2,6 @@
 
 APP_DIR=`dirname $0`
 APP_DIR=`cd "$APP_DIR";pwd`
-
+XDG_DATA_DIRS="$APP_DIR/usr/share:$XDG_DATA_DIRS"; export XDG_DATA_DIRS
 MKI3DGAME_ASSETS="$APP_DIR/assets"; export MKI3DGAME_ASSETS
 exec "$APP_DIR/mki3dgame" "$@"

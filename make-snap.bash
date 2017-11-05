@@ -8,6 +8,11 @@
 #  - sapcraft installed
 #  - rsync installed
 
+while getopts ":u" opt; do
+    echo 'Updating Go packages ...';
+    go get -u -v # update Go packages;
+done;
+
 ./make-mki3game.bash
 
 echo 'Preparing for AppImage ...'

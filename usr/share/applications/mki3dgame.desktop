@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=mki3dgame
 Type=Application
-Icon=mkisg_icon_48x48
+Icon=mkisg_icon
 Terminal=true
 Exec=mki3dgame
 Categories=Game;

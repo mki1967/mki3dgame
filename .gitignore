@@ -26,3 +26,9 @@ _testmain.go
 #backup emacs files
 *~
 
+# compiled binary file
+/mki3dgame
+
+# build directories 
+/build-AppImage
+/build-snap

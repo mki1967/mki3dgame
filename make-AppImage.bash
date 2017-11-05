@@ -8,6 +8,12 @@
 #  - the appimagetool-x86_64.AppImage on your $PATH (see https://github.com/AppImage/AppImageKit )
 #  - rsync installed
 
+while getopts ":u" opt; do
+    echo 'Updating Go packages ...';
+    go get -u -v # update Go packages;
+done;
+
+
 ./make-mki3game.bash
 
 echo 'Preparing for AppImage ...'
