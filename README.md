@@ -1,3 +1,5 @@
+# mki3dgame [![Build Status](https://travis-ci.org/mki1967/mki3dgame.svg?branch=master)](https://travis-ci.org/mki1967/mki3dgame)
+
 This game uses designs produced with MKI3D web 3D editor (see: https://mki1967.github.io/mki3d/ ).
 
 See also on: 
