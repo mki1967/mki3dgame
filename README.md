@@ -7,6 +7,8 @@ See also on:
 or Bintray: 
 [ ![Download](https://api.bintray.com/packages/mki1967/mki3d-generic/mki3dgame/images/download.svg) ](https://bintray.com/mki1967/mki3d-generic/mki3dgame/_latestVersion)
 
+Snapped version is available at: https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
+
 
 In the game, you have to collect tokens scattered in the stages and avoid being captured by the monsters.
 (A short screen-cast is available at: https://youtu.be/vp6nhvOqhdU . )
