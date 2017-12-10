@@ -41,5 +41,5 @@ Sectors action layout:
 
 MF, MB, MU, MD, ML, MR - move forward, backward, up, down, left and right
 RU, RD, RL, RR - rotate up, down, left and right
-LV - set the player upright
+LV - set the player upright, then align the horizontal rotation to the right angle
 `

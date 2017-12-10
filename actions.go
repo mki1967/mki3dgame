@@ -135,5 +135,12 @@ func (g *Mki3dGame) ActionRotDown() {
 }
 
 func (g *Mki3dGame) ActionLevel() {
-	g.TravelerPtr.Rot.YZ = 0
+	if g.TravelerPtr.Rot.YZ == 0 {
+		// fmt.Println("1: g.TravelerPtr.Rot.XZ ==", g.TravelerPtr.Rot.XZ)
+		g.TravelerPtr.Rot.XZ = NearestRightAngle(g.TravelerPtr.Rot.XZ)
+		// fmt.Println("1: g.TravelerPtr.Rot.XZ ==", g.TravelerPtr.Rot.XZ)
+	} else {
+		g.TravelerPtr.Rot.YZ = 0
+	}
+	g.CancelAction()
 }

@@ -53,6 +53,42 @@ func (rot *RotHVType) RotateYZ(angle float64) {
 	}
 }
 
+// find the nearest right angle (in dergrees) among the angles {0, 90, 180, 270}
+func NearestRightAngle(angle float64) float64 {
+	angle = angle - math.Floor(angle/360)*360
+	d := math.Abs(angle)
+	out := float64(0)
+
+	x := math.Abs(angle - 90)
+	if x < d {
+		out = float64(90)
+		d = x
+	}
+
+	x = math.Abs(angle - 180)
+	if x < d {
+		out = float64(180)
+		d = x
+	}
+
+	x = math.Abs(angle - 270)
+
+	if x < d {
+		out = float64(270)
+		d = x
+	}
+
+	x = math.Abs(angle - 360)
+
+	if x < d {
+		out = float64(0)
+		d = x
+	}
+
+	return out
+
+}
+
 const degToRadians = math.Pi / 180
 
 func (rot *RotHVType) WorldRotatedVector(vector mgl32.Vec3) mgl32.Vec3 {
