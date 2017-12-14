@@ -5,6 +5,9 @@
 # Git-related files
 .git*
 
+# docs/ directory
+docs
+
 # source files (uncomment the line below if you don't want them in the package)
 # *.go
 
