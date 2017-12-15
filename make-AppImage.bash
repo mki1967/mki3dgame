@@ -24,11 +24,15 @@ mkdir build-AppImage # do everything in the 'build' directory
 pushd ../ # Go to the parent directory.
 echo 'rsync-ing ...'
 rsync -av --exclude-from=mki3dgame/rsync-exclude-patterns-AppImage mki3dgame mki3dgame/build-AppImage/
+pushd  mki3dgame/build-AppImage/
+mv mki3dgame io.github.mki1967.mki3dgame  ## change the name to reverse domain
+popd    # return to the directory
 popd    # return to the directory
 
 pushd build-AppImage/ # Go to the build directory.
 echo 'Building AppImage ...'
-appimagetool-x86_64.AppImage mki3dgame
+## appimagetool-x86_64.AppImage mki3dgame
+appimagetool-x86_64.AppImage io.github.mki1967.mki3dgame
 rm -rf mki3dgame/ # remove the rsync-ed directory
 popd    # return to the directory
 
