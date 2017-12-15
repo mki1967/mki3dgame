@@ -3,7 +3,7 @@
   <id>io.github.mki1967.mki3dgame</id>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3.0</project_license>
-  <name>mki3dgame</name>
+  <name>io.github.mki1967.mki3dgame</name>
   <summary>A simple OpenGL game of searching for tokens in 3D stages. </summary>
   <description>
     <p>
@@ -23,6 +23,6 @@
   </screenshots>
   <url type="homepage">https://github.com/mki1967/mki3dgame</url>
   <provides>
-    <binary>mki3dgame</binary>
+    <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
 </component>

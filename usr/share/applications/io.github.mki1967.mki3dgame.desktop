@@ -1,7 +1,7 @@
 [Desktop Entry]
-Name=mki3dgame
+Name=io.github.mki1967.mki3dgame
 Type=Application
 Icon=mkisg_icon
 Terminal=true
-Exec=mki3dgame
+Exec=io.github.mki1967.mki3dgame
 Categories=Game;
