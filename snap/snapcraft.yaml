@@ -1,5 +1,5 @@
 name: mki3dgame-snap # you probably want to 'snapcraft register <name>'
-version: '1.10' # just for humans, typically '1.2+git' or '1.3.2'
+version: '1.11' # just for humans, typically '1.2+git' or '1.3.2'
 summary: A game of finding tokens in 3D stages among the flying monsters. # 79 char long summary
 description: |
   Find and collect tokens in 3D stages and avoid being captured by the monsters.
@@ -12,7 +12,7 @@ confinement: strict # devmode # use 'strict' once you have the right plugs and s
 apps:
   mki3dgame-snap:
     command: mki3dgame-snap-wrapper.bash
-    desktop: usr/share/applications/mki3dgame.desktop 
+    desktop: usr/share/applications/io.github.mki1967.mki3dgame.desktop
     plugs:
       - x11
       - opengl

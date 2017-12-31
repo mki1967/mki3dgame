@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=mki3dgame
+Name=mki3dgame-snap
 Type=Application
 Icon=${SNAP}/meta/gui/mkisg_icon_256x256.png
 Terminal=true
