@@ -16,6 +16,7 @@ import (
 	// "path/filepath"
 	"runtime"
 	// "strings"
+	"flag"
 	"time"
 )
 
@@ -24,9 +25,6 @@ func init() {
 	runtime.LockOSThread()
 	rand.Seed(time.Now().Unix()) // init random generator
 }
-
-const windowWidth = 800
-const windowHeight = 600
 
 var Window *glfw.Window // main window
 
@@ -80,20 +78,29 @@ func pathToAssets() string {
 	}
 
 	// get path to assets from command line argument
-	if len(os.Args) < 2 {
+	// if len(os.Args) < 2 {
+	if len(flag.Args()) < 2 {
 		// panic(errors.New(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** "))
 		// fmt.Println(" *** YOU CAN PROVIDE PATH TO YOUR ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** ")
 		fmt.Println(" Trying to use default path to assets: '" + pathToAssets + "'")
 
 	} else {
 		// fmt.Println("Path to assets from command line argument: " + os.Args[1])
-		pathToAssets = os.Args[1]
+		// pathToAssets = os.Args[1]
+		pathToAssets = flag.Args()[0]
 	}
 
 	return pathToAssets
 }
 
 func main() {
+
+	windowWidthPtr := flag.Int("width", 800, "initial width of the window")
+	windowHeightPtr := flag.Int("height", 600, "initial height of the window")
+	flag.Parse()
+
+	fmt.Println(flag.Args())
+
 	pathToAssets := pathToAssets()
 
 	// fragments from https://github.com/go-gl/examples/blob/master/gl41core-cube/cube.go
@@ -109,7 +116,7 @@ func main() {
 	glfw.WindowHint(glfw.OpenGLProfile, glfw.OpenGLCoreProfile)
 	// glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)
 	glfw.WindowHint(glfw.Samples, 4) // try multisampling for better quality ...
-	window, err := glfw.CreateWindow(windowWidth, windowHeight, "Mki3dgame", nil, nil)
+	window, err := glfw.CreateWindow(*windowWidthPtr, *windowHeightPtr, "Mki3dgame", nil, nil)
 	if err != nil {
 		panic(err)
 	}

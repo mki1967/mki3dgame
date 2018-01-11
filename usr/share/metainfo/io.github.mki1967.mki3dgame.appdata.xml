@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.mki1967.mki3dgame</id>
+  <id>io.github.mki1967.mki3dgame.desktop</id>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3.0</project_license>
   <name>io.github.mki1967.mki3dgame</name>
-  <summary>A simple OpenGL game of searching for tokens in 3D stages. </summary>
+  <summary>A simple OpenGL game of searching for tokens in 3D stages</summary>
   <description>
     <p>
       A simple OpenGL game of searching for tokens in 3D stages.
-      You also have to avoid the monsters. (They can capture you.)
+      You also have to avoid the monsters.
     </p>
     <p>
-      Any user can prepare his own assets with stages, monsters and tokens
+      The stages, monsters and tokens are
       designned with MKI3D RAPID MODELLER.
     </p>
   </description>
@@ -22,7 +22,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>A stage of mki3dgame</caption>
-      <image>https://mki1967.github.io/mki3dgame/img/screen-shot.png</image>
+      <image>https://mki1967.github.io/mki3dgame/img/mki3dgame-screenshot-1280x720.png</image>
     </screenshot>
   </screenshots>
   <provides>
