@@ -79,7 +79,7 @@ func pathToAssets() string {
 
 	// get path to assets from command line argument
 	// if len(os.Args) < 2 {
-	if len(flag.Args()) < 2 {
+	if len(flag.Args()) < 1 {
 		// panic(errors.New(" *** PROVIDE PATH TO ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** "))
 		// fmt.Println(" *** YOU CAN PROVIDE PATH TO YOUR ASSETS DIRECTORY AS A COMMAND LINE ARGUMENT !!! *** ")
 		fmt.Println(" Trying to use default path to assets: '" + pathToAssets + "'")
@@ -99,7 +99,7 @@ func main() {
 	windowHeightPtr := flag.Int("height", 600, "initial height of the window")
 	flag.Parse()
 
-	fmt.Println(flag.Args())
+	// fmt.Println(flag.Args())
 
 	pathToAssets := pathToAssets()
 
