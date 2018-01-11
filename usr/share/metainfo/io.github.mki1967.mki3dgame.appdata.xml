@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2018 Marcin Kik  <mki1967@gmail.com> -->
 <component type="desktop-application">
   <id>io.github.mki1967.mki3dgame.desktop</id>
   <metadata_license>FSFAP</metadata_license>
@@ -15,7 +16,6 @@
       designned with MKI3D RAPID MODELLER.
     </p>
   </description>
-  <x-launchable type="desktop-id">io.github.mki1967.mki3dgame.desktop</x-launchable>
   <url type="homepage">https://mki1967.github.io/mki3dgame</url>
   <url type="bugtracker">https://github.com/mki1967/mki3dgame/issues</url>
   <url type="help">https://github.com/mki1967/mki3dgame/blob/master/README.md</url>
