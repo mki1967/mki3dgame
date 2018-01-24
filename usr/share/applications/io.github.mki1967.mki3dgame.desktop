@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=io.github.mki1967.mki3dgame
 Type=Application
+Comment=A game of searching in the stages designed with mki3d
 Icon=io.github.mki1967.mki3dgame
 Terminal=true
 Exec=io.github.mki1967.mki3dgame

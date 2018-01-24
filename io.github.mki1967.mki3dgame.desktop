@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=mki3dgame
 Type=Application
+Comment=A game of searching in the stages designed with mki3d
 Icon=mkisg_icon
 Terminal=true
 Exec=mki3dgame
