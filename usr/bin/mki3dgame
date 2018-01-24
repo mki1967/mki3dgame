@@ -1,8 +1,8 @@
 #!/bin/sh
 
-HERE=$(dirname "$(readlink -f "${0}")"); # this script is in $MOUNT/usr/games; $MOUNT should be the mounting point
+HERE=$(dirname "$(readlink -f "${0}")"); # this script is in $SOMETHING/bin linked to $SOMETHING/games
 echo $HERE
-MOUNT=`cd $HERE; cd ../.. ; pwd` 
-XDG_DATA_DIRS="$MOUNT/usr/share:$XDG_DATA_DIRS"; export XDG_DATA_DIRS
-MKI3DGAME_ASSETS="$MOUNT/usr/share/games/mki3dgame/assets"; export MKI3DGAME_ASSETS
-exec "$MOUNT/usr/games/mki3dgame.bin" "$@"
+MOUNT=`cd $HERE; cd .. ; pwd`
+XDG_DATA_DIRS="$MOUNT/share:$XDG_DATA_DIRS"; export XDG_DATA_DIRS
+MKI3DGAME_ASSETS="$MOUNT/share/games/mki3dgame/assets"; export MKI3DGAME_ASSETS
+exec "$MOUNT/bin/mki3dgame.bin" "$@"
