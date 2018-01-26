@@ -4,7 +4,7 @@
   <id>io.github.mki1967.mki3dgame.desktop</id>
   <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3.0</project_license>
-  <name>io.github.mki1967.mki3dgame</name>
+  <name>MKI3D Game</name>
   <summary>A simple OpenGL game of searching for tokens in 3D stages</summary>
   <description>
     <p>
@@ -28,4 +28,11 @@
   <provides>
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
+  <releases>
+    <release version="1.11.2" date="2018-01-26">
+      <description>
+	<p>Fixes metadata for Flathub</p>
+      </description>
+    </release>
+  </releases>
 </component>
