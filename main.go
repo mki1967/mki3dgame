@@ -51,6 +51,8 @@ func message(msg string) error {
 
 var doInMainThread func() = nil
 
+var PathToAssets string = "assets"
+
 func pathToAssets() string {
 	pathToAssets := "assets"
 	/*
@@ -102,6 +104,7 @@ func main() {
 	// fmt.Println(flag.Args())
 
 	pathToAssets := pathToAssets()
+	PathToAssets = pathToAssets
 
 	// fragments from https://github.com/go-gl/examples/blob/master/gl41core-cube/cube.go
 
@@ -143,14 +146,15 @@ func main() {
 		panic(err)
 	}
 
-	// message(helpText) // initial help message
-	fmt.Println(helpText)
-
 	// load the first stage
 	err = game.Init()
 	if err != nil {
 		panic(err)
 	}
+
+	// message(helpText) // initial help message
+	fmt.Println(helpText)
+	doInMainThread = ZenityHelp
 
 	// main loop
 	for !window.ShouldClose() {
