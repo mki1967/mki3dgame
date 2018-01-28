@@ -29,9 +29,9 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
-    <release version="1.11.3" date="2018-01-27">
+    <release version="1.11.4" date="2018-01-27">
       <description>
-	<p>Fixes metadata for Flathub</p>
+	<p>zenity messages</p>
       </description>
     </release>
   </releases>
