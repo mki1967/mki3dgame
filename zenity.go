@@ -19,7 +19,7 @@ func init() {
 }
 
 func RunScript(name string, arg ...string) ([]byte, error) {
-	fmt.Println(arg)
+	// fmt.Println(arg)
 	cmd := exec.Command(PathToAssets+"/scripts/"+name, arg...)
 	out, err := cmd.CombinedOutput()
 	// fmt.Println(out)
