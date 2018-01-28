@@ -107,6 +107,9 @@ func main() {
 	pathToAssets := pathToAssets()
 	PathToAssets = pathToAssets
 
+	// test for zenity
+	ZenityTest()
+
 	// fragments from https://github.com/go-gl/examples/blob/master/gl41core-cube/cube.go
 
 	if err := glfw.Init(); err != nil {

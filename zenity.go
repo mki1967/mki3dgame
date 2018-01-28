@@ -8,7 +8,7 @@ import (
 // Assume that zenity is available
 var IsZenity = true
 
-func init() {
+func ZenityTest() {
 	out, err := RunScript("zenity-test.bash")
 	if err != nil {
 		IsZenity = false
