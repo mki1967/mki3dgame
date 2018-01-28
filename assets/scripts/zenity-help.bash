@@ -1,4 +1,5 @@
 #!/bin/bash
+unset WINDOWID
 zenity --text-info --font='DejaVu Sans Mono' --width 700 --height 700 --title "MKI3D GAME HELP PAGE" <<EOF
 MKI3D GAME (see: https://github.com/mki1967/mki3dgame )
 =======================================================
