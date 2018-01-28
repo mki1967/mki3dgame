@@ -3,6 +3,6 @@ Name=io.github.mki1967.mki3dgame
 Type=Application
 Comment=A game of searching in the stages designed with mki3d
 Icon=io.github.mki1967.mki3dgame
-Terminal=true
+Terminal=false
 Exec=io.github.mki1967.mki3dgame
 Categories=Game;
