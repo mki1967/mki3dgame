@@ -5,6 +5,7 @@ import (
 	// "github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/go-gl/mathgl/mgl32"
+	"strconv"
 	// "math"
 	// "github.com/mki1967/go-mki3d/mki3d"
 	// "github.com/mki1967/go-mki3d/glmki3d"
@@ -70,6 +71,7 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 
 		case key == glfw.KeyX && mods == 0: /* light */
 			fmt.Println("RELOADING RANDOM STAGE ...")
+			ZenityInfo("NEXT RANDOM STAGE ...", "1")
 			g.NextStage()
 
 		case key == glfw.KeyZ && mods == 0: /* zoom out */
@@ -88,10 +90,19 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 			/* help */
 		case key == glfw.KeyH && mods == 0:
 			message(helpText)
+			ZenityHelp()
 		case key == glfw.KeyP && mods == 0: /* PAUSE */
 			// g.PauseRequest.Set()
 			g.Paused.Set(true)
 			fmt.Println("PAUSED")
+			ZenityInfo("PAUSED", "1")
+		case key == glfw.KeyQ && mods == 0: /* QUERY REMAINING TOKENS */
+			ts := strconv.FormatFloat(g.TotalScore, 'f', 2, 64)
+			ZenityInfo(
+				"TOTAL SCORE: "+ts+
+					"\nREMAINING TOKENS ON THIS STAGE: "+strconv.Itoa(g.TokensRemaining),
+				"4")
+
 		}
 	}
 }

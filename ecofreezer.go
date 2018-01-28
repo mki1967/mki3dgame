@@ -21,6 +21,7 @@ func (g *Mki3dGame) EcoFreezer() {
 			if !wasAction {
 				// fmt.Println("EcoFreezer: Setting PauseRequest ...")
 				fmt.Println("AUTO-PAUSE")
+				ZenityInfo("AUTO-PAUSE", "1")
 				// g.PauseRequest.Set() // old version
 				g.Paused.Set(true) // new version
 			}

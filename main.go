@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
+	"strconv"
 	// "github.com/mki1967/go-mki3d/mki3d"
 	// "github.com/go-gl/mathgl/mgl32"
 	// "github.com/mki1967/go-mki3d/glmki3d"
@@ -154,7 +155,8 @@ func main() {
 
 	// message(helpText) // initial help message
 	fmt.Println(helpText)
-	doInMainThread = ZenityHelp
+	ZenityInfo("PRESS THE MOUSE ON SCREEN SECTORS OR USE THE KEYS.\n PRESS 'H' FOR HELP. ", "6")
+	// doInMainThread = ZenityHelp
 
 	// main loop
 	for !window.ShouldClose() {
@@ -183,6 +185,8 @@ func main() {
 	}
 
 	fmt.Println("YOUR TOTAL SCORE IS: ", game.TotalScore)
+	ts := strconv.FormatFloat(game.TotalScore, 'f', 2, 64)
+	ZenityInfo("YOUR TOTAL SCORE IS: "+ts, "4")
 	// cleanup
 	game.StageDSPtr.DeleteData()
 	game.FrameDSPtr.DeleteData()

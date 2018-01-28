@@ -9,6 +9,7 @@ import (
 	"github.com/mki1967/go-mki3d/glmki3d"
 	"github.com/mki1967/go-mki3d/mki3d"
 	"math"
+	"strconv"
 	// "time"
 	// "math/rand"
 	_ "image/png"
@@ -142,6 +143,7 @@ func (game *Mki3dGame) Init() (err error) {
 	}
 
 	fmt.Println("NEW STAGE! Collect ", game.TokensRemaining, " tokens.")
+	// ZenityInfo("NEW STAGE! Collect "+strconv.Itoa( game.TokensRemaining)+ " tokens.", "2")
 	// init time probe
 	game.LastProbedTime = glfw.GetTime()
 	game.StageStartingTime = game.LastProbedTime
@@ -418,7 +420,11 @@ func (game *Mki3dGame) Update() {
 		time := math.Floor(game.LastProbedTime - game.StageStartingTime)
 		score := math.Floor(1 + 30*float64(game.TokensCollected)/(time+1))
 		game.TotalScore += score
+		t := strconv.FormatFloat(time, 'f', 2, 64)
+		s := strconv.FormatFloat(score, 'f', 2, 64)
+		ts := strconv.FormatFloat(game.TotalScore, 'f', 2, 64)
 		fmt.Println("STAGE FINISHED !!! Time:", time, " seconds, stage score: ", score, ", total: ", game.TotalScore, ".")
+		ZenityInfo("STAGE FINISHED !!! Time:"+t+" seconds,\n stage score: "+s+",\n total: "+ts+".", "5")
 		game.NextStage()
 	} else { // update the player in the stage
 		if game.CurrentAction != nil {

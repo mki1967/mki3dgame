@@ -42,5 +42,6 @@ Key press actions:
   L - set the diffuse light direction perpendicular to the screen
   P - pause the game
   X - reload random stage
+  Q - display your score and the number of remaining tokens
 EOF
 

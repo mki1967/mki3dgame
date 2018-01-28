@@ -77,6 +77,7 @@ func (m *MonsterType) Update(g *Mki3dGame) {
 		if v.Dot(v) < MonsterCaptureRangeSqr {
 			t.CapturedBy = m
 			fmt.Println("YOU HAVE BEEN CAPTURED BY A MONSTER !!!")
+			ZenityInfo("YOU HAVE BEEN CAPTURED BY A MONSTER !!!", "2")
 		}
 
 	}

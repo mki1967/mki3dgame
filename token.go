@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt" // tests
+	// "strconv"
 	// "errors"
 	// "github.com/go-gl/gl/v3.3-core/gl"
 	// "github.com/go-gl/glfw/v3.2/glfw"
@@ -54,6 +55,7 @@ func (t *TokenType) Update(g *Mki3dGame) {
 		g.CancelAction()
 		// some celebrations ...
 		fmt.Println("COLLECTED !!! (", g.TokensRemaining, " remaining)")
+		// ZenityInfo("COLLECTED !!! ("+ strconv.Itoa(g.TokensRemaining)+" remaining)","1")
 		g.JustCollected = true
 
 	}
