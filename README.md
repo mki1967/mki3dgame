@@ -2,12 +2,13 @@
 
 This game uses designs produced with MKI3D web 3D editor (see: https://mki1967.github.io/mki3d/ ).
 
-See also on: 
+* The AppImages can be found on the [releases page](https://github.com/mki1967/mki3dgame/releases). See also on: 
 [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/)
 or Bintray: 
 [ ![Download](https://api.bintray.com/packages/mki1967/mki3d-generic/mki3dgame/images/download.svg) ](https://bintray.com/mki1967/mki3d-generic/mki3dgame/_latestVersion)
 
-Snapped version is available at: https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
+* Snapped version is available at: https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
+* Faltpak version is available on [Flathub](https://flathub.org/apps/) (also installable with package manager on Linux Mint).
 
 
 In the game, you have to collect tokens scattered in the stages and avoid being captured by the monsters.
