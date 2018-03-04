@@ -8,6 +8,7 @@ import (
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/mki1967/go-mki3d/glmki3d"
 	"github.com/mki1967/go-mki3d/mki3d"
+	"github.com/mki1967/go-skybox/sbxgpu"
 	"math"
 	"strconv"
 	// "time"
@@ -67,6 +68,8 @@ type Mki3dGame struct {
 	WasAction Flag // set ech time the user action is executed
 
 	JustCollected bool // token has been just collected! Do some clebrations in Redraw ...
+
+	Skybox sbxgpu.SbxGpu // skybox
 }
 
 // Make game structure with the shader and without any data.
@@ -142,6 +145,7 @@ func (game *Mki3dGame) Init() (err error) {
 		return err
 	}
 
+	game.Skybox.RenderRandomCube() // make random cube
 	fmt.Println("NEW STAGE! Collect ", game.TokensRemaining, " tokens.")
 	// ZenityInfo("NEW STAGE! Collect "+strconv.Itoa( game.TokensRemaining)+ " tokens.", "2")
 	// init time probe
@@ -445,6 +449,7 @@ func (game *Mki3dGame) NextStage() {
 
 // Redraw the game stage
 func (game *Mki3dGame) Redraw() {
+
 	gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT) // to be moved to redraw ?
 	if game.JustCollected {
 		gl.ClearColor(1.0, 0.4, 0.4, 1.0)
@@ -461,6 +466,8 @@ func (game *Mki3dGame) Redraw() {
 		game.DrawTokens()
 		// draw monsters
 		game.DrawMonsters()
+		game.Skybox.DrawSkybox(game.StageDSPtr.UniPtr.ViewUni, game.StageDSPtr.UniPtr.ProjectionUni) // draw the skybox
+
 	}
 	if game.CurrentAction == nil {
 		// draw sectors
