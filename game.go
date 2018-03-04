@@ -114,6 +114,8 @@ func MakeEmptyGame(pathToAssets string, window *glfw.Window) (*Mki3dGame, error)
 
 	game.Paused = MakeSharedBool() // new version
 
+	game.Skybox = sbxgpu.NewSbxGpu() // init skybox shader
+
 	go game.EcoFreezer() // run concurrent eco-freezer goroutine
 
 	return &game, nil
