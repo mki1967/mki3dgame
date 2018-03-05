@@ -29,6 +29,11 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.12" date="2018-03-05">
+      <description>
+	<p>fancy random coloured sky-box</p>
+      </description>
+    </release>
     <release version="1.11.4" date="2018-01-27">
       <description>
 	<p>zenity messages</p>
