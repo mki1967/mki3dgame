@@ -103,6 +103,19 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 					"\nREMAINING TOKENS ON THIS STAGE: "+strconv.Itoa(g.TokensRemaining),
 				"4")
 
+		case key == glfw.KeyS && mods == 0: /* Togle skybox */
+			g.withSkybox = !g.withSkybox
+			ZenityInfo(
+				"WITH SKYBOX: "+strconv.FormatBool(g.withSkybox),
+				"1")
+
+		case key == glfw.KeyN && mods == 0: /* Togle skybox */
+			ZenityInfo(
+				"NEW SKYBOX !",
+				"1")
+			g.Skybox.RenderRandomCube()
+			g.withSkybox = true
+
 		}
 	}
 }

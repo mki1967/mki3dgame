@@ -20,6 +20,9 @@ Key press actions:
   L - set the diffuse light direction perpendicular to the screen
   P - pause the game
   X - reload random stage
+  S - toggle SKYBOX ON/OFF
+  N - new SKYBOX
+
 
 Or press the mouse on the screen sectors:
 

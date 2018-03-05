@@ -12,8 +12,8 @@ import (
 	"math"
 	"strconv"
 	// "time"
-	// "math/rand"
 	_ "image/png"
+	"math/rand"
 )
 
 const BoxMargin = 30 // margin for bounding box of the stage
@@ -26,6 +26,8 @@ var NumberOfTokens = 10
 
 const VerticalSectors = 6   // vertical dimmension of sectors array
 const HorizontalSectors = 6 // horizontal  dimmension of sectors array
+
+const skyboxChance = 0.5 // the chance of having withSkybox==true on the new stage
 
 // data structure for the game
 type Mki3dGame struct {
@@ -69,7 +71,8 @@ type Mki3dGame struct {
 
 	JustCollected bool // token has been just collected! Do some clebrations in Redraw ...
 
-	Skybox sbxgpu.SbxGpu // skybox
+	Skybox     sbxgpu.SbxGpu // skybox
+	withSkybox bool          // draw the skybox?
 }
 
 // Make game structure with the shader and without any data.
@@ -148,6 +151,7 @@ func (game *Mki3dGame) Init() (err error) {
 	}
 
 	game.Skybox.RenderRandomCube() // make random cube
+	game.withSkybox = (rand.Float64() < skyboxChance)
 	fmt.Println("NEW STAGE! Collect ", game.TokensRemaining, " tokens.")
 	// ZenityInfo("NEW STAGE! Collect "+strconv.Itoa( game.TokensRemaining)+ " tokens.", "2")
 	// init time probe
@@ -468,7 +472,9 @@ func (game *Mki3dGame) Redraw() {
 		game.DrawTokens()
 		// draw monsters
 		game.DrawMonsters()
-		game.Skybox.DrawSkybox(game.StageDSPtr.UniPtr.ViewUni, game.StageDSPtr.UniPtr.ProjectionUni) // draw the skybox
+		if game.withSkybox {
+			game.Skybox.DrawSkybox(game.StageDSPtr.UniPtr.ViewUni, game.StageDSPtr.UniPtr.ProjectionUni) // draw the skybox
+		}
 
 	}
 	if game.CurrentAction == nil {

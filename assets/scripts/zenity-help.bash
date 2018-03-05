@@ -44,5 +44,7 @@ Key press actions:
   P - pause the game
   X - reload random stage
   Q - display your score and the number of remaining tokens
+  S - toggle SKYBOX ON/OFF
+  N - new SKYBOX
 EOF
 
