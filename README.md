@@ -7,7 +7,9 @@ This game uses designs produced with MKI3D web 3D editor (see: https://mki1967.g
 or Bintray: 
 [ ![Download](https://api.bintray.com/packages/mki1967/mki3d-generic/mki3dgame/images/download.svg) ](https://bintray.com/mki1967/mki3d-generic/mki3dgame/_latestVersion)
 
-* Snapped version is available at: https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
+* Snapped version is available at: 
+     - https://snapcraft.io/mki3dgame-snap 
+     - https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
 * Faltpak version is available on [Flathub](https://flathub.org/apps/) (also installable with package manager on Linux Mint).
 
 
