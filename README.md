@@ -10,7 +10,9 @@ or Bintray:
 * Snapped version is available at: 
      - https://snapcraft.io/mki3dgame-snap 
      - https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
-* Flatpak version is available on [Flathub](https://flathub.org/apps/) (also installable with package manager on Linux Mint).
+* Flatpak version is available on:
+     - [Flathub](https://flathub.org/apps/) (see the [temporary link on beta.flathub.org](https://beta.flathub.org/apps/details/io.github.mki1967.mki3dgame))
+     - also installable with package manager on Linux Mint.
 
 
 In the game, you have to collect tokens scattered in the stages and avoid being captured by the monsters.
