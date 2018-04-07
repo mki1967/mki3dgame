@@ -1,38 +1,39 @@
 # mki3dgame [![Build Status](https://travis-ci.org/mki1967/mki3dgame.svg?branch=master)](https://travis-ci.org/mki1967/mki3dgame)
 
-This game uses designs produced with MKI3D web 3D editor (see: https://mki1967.github.io/mki3d/ ).
+This game uses designs produced with [MKI3D web 3D editor](https://mki1967.github.io/mki3d/).
 
-* The AppImages can be found on the [releases page](https://github.com/mki1967/mki3dgame/releases). See also on: 
-[![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/)
-or Bintray: 
-[ ![Download](https://api.bintray.com/packages/mki1967/mki3d-generic/mki3dgame/images/download.svg) ](https://bintray.com/mki1967/mki3d-generic/mki3dgame/_latestVersion)
+* The AppImages can be found on:
+     - the [releases page](https://github.com/mki1967/mki3dgame/releases),
+     - Sourceforge: [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/), 
+     - Bintray: [ ![Download](https://api.bintray.com/packages/mki1967/mki3d-generic/mki3dgame/images/download.svg) ](https://bintray.com/mki1967/mki3d-generic/mki3dgame/_latestVersion)
 
 * Snapped version is available at: 
      - https://snapcraft.io/mki3dgame-snap 
      - https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
 * Flatpak version is available on:
-     - [Flathub](https://flathub.org/apps/) (see the [temporary link on beta.flathub.org](https://beta.flathub.org/apps/details/io.github.mki1967.mki3dgame))
+     - [Flathub](https://beta.flathub.org/apps/details/io.github.mki1967.mki3dgame)
      - also installable with package manager on Linux Mint.
 
 
 In the game, you have to collect tokens scattered in the stages and avoid being captured by the monsters.
-(A short screen-cast is available at: https://youtu.be/vp6nhvOqhdU . )
-Run the game with the path to assets directory as the command line argument.
-(See the content of the 'runme' script in this directory.)
 
-The assets directory has the following sub-directories:
+If you build the game from source code or use the AppImage (which is not sandboxed),
+then you can run the game with the path to your own assets directory as the command line argument.
 
-* 'icons' -  icon '.png' files (some systems may use them ...)
-* 'monsters' - monster shapes '.mki3d' files - made with MKI3D
-* 'sectors'  - shapes of screen sectors '.mki3d' - made with MKI3D, specific to the code 
-* 'stages'  - stages '.mki3d' files - made with MKI3D
-* 'tokens'  - token shapes '.mki3d' files - made with MKI3D
+The `assets` directory has the following sub-directories:
+
+* `icons` -  icon `.png` files (some systems may use them ...)
+* `monsters` - monster shapes `.mki3d` files - made with MKI3D
+* `sectors`  - shapes of screen sectors `.mki3d` - made with MKI3D, specific to the code 
+* `stages`  - stages `.mki3d` files - made with MKI3D
+* `tokens`  - token shapes `.mki3d` files - made with MKI3D
+* `scripts` - scripts used to display messages in Zenity dialog windows
 
 You can design your own stages and the shapes of monsters or tokens
-with this editor.
-Just place the files in the respective sub-directories
-'stages', 'monsters', or 'tokens' of the main assets directory.
-Shapes are selected randomly from each sub-directory for each stage.
+with [MKI3D Modeler](https://mki1967.github.io/mki3d/).
+The best way is to copy the `assets` directory and replace the files in the respective sub-directories
+'stages', 'monsters', or 'tokens' of the main assets directory with your own designs.
+Shapes of the monsters, tokens and stages are selected randomly from each sub-directory for each stage.
 
 To build the the game from the source code with Go compiler you need the following packages:
 *	"github.com/go-gl/gl/v3.3-core/gl"
