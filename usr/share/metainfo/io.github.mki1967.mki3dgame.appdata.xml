@@ -13,7 +13,7 @@
     </p>
     <p>
       The stages, monsters and tokens are
-      designned with MKI3D RAPID MODELLER.
+      designed with MKI3D RAPID MODELLER.
     </p>
   </description>
   <url type="homepage">https://mki1967.github.io/mki3dgame</url>
@@ -33,6 +33,11 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.13" date="2018-06-27">
+      <description>
+	<p>new stage: electro-snail-stage</p>
+      </description>
+    </release>
     <release version="1.12" date="2018-03-05">
       <description>
 	<p>fancy random coloured sky-box</p>
