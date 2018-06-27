@@ -23,6 +23,10 @@ parts:
     plugin: dump
     source: ./
     stage-packages:
+      - libxcursor1
+      - libxi6
+      - libxinerama1
+      - libxrandr2
       - libgl1-mesa-dri
       - libgl1-mesa-glx
       - libglew1.13
