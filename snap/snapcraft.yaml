@@ -30,3 +30,4 @@ parts:
       - libgl1-mesa-dri
       - libgl1-mesa-glx
       - libglew1.13
+      # - zenity # zenity doesn't work in snap and increases snap size to 84152320 bytes
