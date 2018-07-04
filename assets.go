@@ -1,7 +1,7 @@
 package main
 
 import (
-	// "fmt" // tests
+	/// "fmt" // tests
 	"io/ioutil"
 	// "errors"
 	"github.com/mki1967/go-mki3d/mki3d"
@@ -13,14 +13,28 @@ import (
 
 // the structure for assets of mki3dgame
 type Assets struct {
-	Path     string
-	Assets   []os.FileInfo
-	Stages   []os.FileInfo
-	Tokens   []os.FileInfo
-	Sectors  []os.FileInfo
-	Monsters []os.FileInfo
-	Icons    []os.FileInfo
+	Path            string
+	Assets          []os.FileInfo
+	Stages          []os.FileInfo
+	Tokens          []os.FileInfo
+	Sectors         []os.FileInfo
+	Monsters        []os.FileInfo
+	Icons           []os.FileInfo
+	LastLoadedStage int // should be initialised to -1
+	/// TestStages [10000]bool // for tests if we have less tham 10000 stages ;-)
 }
+
+/*
+func testStages( a *Assets ) {
+	for i:= range a.Stages {
+		if ! a.TestStages[ i ] {
+	                fmt.Println("i==", i," len(a.Stages)==", len(a.Stages))
+			return
+		}
+	}
+	fmt.Println("ALL STAGES HAVE BEEN LOADED !!!")
+}
+*/
 
 const (
 	StagesDir   = "stages"
@@ -37,7 +51,7 @@ func LoadAssets(pathToAssets string) (*Assets, error) {
 		return nil, err
 	}
 
-	assets := Assets{Path: pathToAssets, Assets: ass} /// ...
+	assets := Assets{Path: pathToAssets, Assets: ass, LastLoadedStage: -1} /// ...
 
 	assets.Stages, err = ioutil.ReadDir(pathToAssets +
 		PS +
@@ -113,8 +127,19 @@ func (a *Assets) LoadIcons() ([]image.Image, error) {
 }
 
 func (a *Assets) LoadRandomStage() (*mki3d.Mki3dType, error) {
-	r := rand.Intn(len(a.Stages))
+	stages := len(a.Stages)
+	n := stages
+
+	if stages >= 2 && a.LastLoadedStage >= 0 { // if we have at least 2 stages and at something has been loaded
+		n = stages - 1
+	}
+
+	// r := rand.Intn(len(a.Stages))  // old
+	r := (a.LastLoadedStage + 1 + rand.Intn(n)) % stages // if n==stages-1 then should select any stage different from  the last one
 	mki3dPtr, err := a.load(StagesDir, a.Stages[r].Name())
+	a.LastLoadedStage = r // record the index of the loaded stage
+	/// a.TestStages[r]= true /// for tests
+	/// testStages(a)
 	return mki3dPtr, err
 }
 
