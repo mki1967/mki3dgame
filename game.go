@@ -27,7 +27,7 @@ var NumberOfTokens = 10
 const VerticalSectors = 6   // vertical dimmension of sectors array
 const HorizontalSectors = 6 // horizontal  dimmension of sectors array
 
-const skyboxChance = 0.5 // the chance of having withSkybox==true on the new stage
+const skyboxChance = 0.75 // the chance of having withSkybox==true on the new stage
 
 // data structure for the game
 type Mki3dGame struct {
