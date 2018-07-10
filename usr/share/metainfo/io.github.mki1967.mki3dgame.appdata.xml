@@ -33,6 +33,11 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.14" date="2018-07-10">
+      <description>
+	<p>displays nuber of stages and new stage: cubic-stage</p>
+      </description>
+    </release>
     <release version="1.13" date="2018-06-27">
       <description>
 	<p>new stage: electro-snail-stage</p>
