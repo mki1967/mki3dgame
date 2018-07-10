@@ -157,8 +157,11 @@ func main() {
 	}
 
 	// message(helpText) // initial help message
-	fmt.Println(helpText)
-	ZenityInfo("PRESS THE MOUSE ON SCREEN SECTORS OR USE THE KEYS.\n PRESS 'H' FOR HELP. ", "6")
+
+	firstLine := "MKI3D GAME with " + strconv.Itoa(len(game.AssetsPtr.Stages)) + " stages.\n"
+
+	fmt.Println(firstLine + helpText)
+	ZenityInfo(firstLine+"\nPRESS THE MOUSE ON SCREEN SECTORS OR USE THE KEYS.\n\nPRESS 'H' FOR HELP. ", "6")
 	// doInMainThread = ZenityHelp
 
 	// main loop
