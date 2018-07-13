@@ -33,6 +33,11 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.14.1" date="2018-07-10">
+      <description>
+	<p>GL_NV_shadow_samplers_cube extension enabled</p>
+      </description>
+    </release>
     <release version="1.14" date="2018-07-10">
       <description>
 	<p>displays nuber of stages and new stage: cubic-stage</p>
