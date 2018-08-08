@@ -3,9 +3,8 @@
 This game uses designs produced with [MKI3D web 3D editor](https://mki1967.github.io/mki3d/).
 
 * The AppImages can be found on:
-     - the [releases page](https://github.com/mki1967/mki3dgame/releases),
-     - Sourceforge: [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/), 
-     - Bintray: [ ![Download](https://api.bintray.com/packages/mki1967/mki3d-generic/mki3dgame/images/download.svg) ](https://bintray.com/mki1967/mki3d-generic/mki3dgame/_latestVersion)
+     - the [releases page](https://github.com/mki1967/mki3dgame/releases)
+     - Sourceforge: [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/)
 
 * Snapped version is available at: 
      - https://snapcraft.io/mki3dgame-snap 
