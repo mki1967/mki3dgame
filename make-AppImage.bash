@@ -36,7 +36,7 @@ pushd build-AppImage/ # Go to the build directory.
 echo 'Building AppImage ...'
 ## appimagetool-x86_64.AppImage mki3dgame
 ## rm -rf mki3dgame/ # remove the rsync-ed directory
-appimagetool-x86_64.AppImage io.github.mki1967.mki3dgame
+appimagetool-x86_64.AppImage --sign io.github.mki1967.mki3dgame
 rm -rf io.github.mki1967.mki3dgame/ # remove the rsync-ed directory
 popd    # return to the directory
 
