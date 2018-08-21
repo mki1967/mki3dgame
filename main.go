@@ -163,7 +163,7 @@ func main() {
 	fmt.Println(firstLine + helpText)
 	ZenityInfo(firstLine+"\nPRESS THE MOUSE ON SCREEN SECTORS OR USE THE KEYS.\n\nPRESS 'H' FOR HELP. ", "6")
 	// doInMainThread = ZenityHelp
-
+	game.Paused.Set(true)
 	// main loop
 	for !window.ShouldClose() {
 
