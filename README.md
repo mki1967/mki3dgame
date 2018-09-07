@@ -1,10 +1,11 @@
 # mki3dgame [![Build Status](https://travis-ci.org/mki1967/mki3dgame.svg?branch=master)](https://travis-ci.org/mki1967/mki3dgame)
 
-This game uses designs produced with [MKI3D web 3D editor](https://mki1967.github.io/mki3d/).
+Searching for objects in 3D stages.
+This game uses stages designed with [MKI3D web 3D editor](https://mki1967.github.io/mki3d/).
 
 * The AppImages can be found on:
      - the [releases page](https://github.com/mki1967/mki3dgame/releases)
-     - Sourceforge: [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/)
+     - Sourceforge: [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/) (Also a zip file with version compiled for Windows)
 
 * Snapped version is available at: 
      - https://snapcraft.io/mki3dgame-snap 
