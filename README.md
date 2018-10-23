@@ -12,6 +12,8 @@ This game uses stages designed with [MKI3D web 3D editor](https://mki1967.github
      - https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
 * Flatpak version is available on:
      - [Flathub](https://flathub.org/apps/details/io.github.mki1967.mki3dgame)
+       <a href="https://flathub.org/apps/details/io.github.mki1967.mki3dgame"><img height="51" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.svg"/></a>
+
 
 
 In the game, you have to collect tokens scattered in the stages and avoid being captured by the monsters.
