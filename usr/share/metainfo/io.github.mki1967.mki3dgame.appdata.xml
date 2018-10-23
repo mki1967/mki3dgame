@@ -8,8 +8,7 @@
   <summary>A simple OpenGL game of searching for tokens in 3D stages</summary>
   <description>
     <p>
-      A simple OpenGL game of searching for tokens in 3D stages.
-      You also have to avoid the monsters.
+      Searching for tokens in 3D stages amongst flying monsters.
     </p>
     <p>
       The stages, monsters and tokens are
