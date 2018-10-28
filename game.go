@@ -27,7 +27,7 @@ var NumberOfTokens = 10
 const VerticalSectors = 6   // vertical dimmension of sectors array
 const HorizontalSectors = 6 // horizontal  dimmension of sectors array
 
-const skyboxChance = 0.85 // the chance of having withSkybox==true on the new stage
+const skyboxChance = 0.25 // the chance of having withSkybox==true on the new stage
 
 // data structure for the game
 type Mki3dGame struct {
@@ -460,6 +460,8 @@ func (game *Mki3dGame) Redraw() {
 	if game.JustCollected {
 		gl.ClearColor(1.0, 0.4, 0.4, 1.0)
 		gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
+		game.Skybox.RenderRandomCube()
+		game.withSkybox = true
 		// game.JustCollected = false
 		// time.Sleep(time.Millisecond * 500)
 	} else {
