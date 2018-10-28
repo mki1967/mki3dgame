@@ -21,6 +21,10 @@
   <screenshots>
     <screenshot type="default">
       <caption>A stage of mki3dgame</caption>
+      <image>https://mki1967.github.io/mki3dgame/img/wiatraki_1280x720.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A stage of mki3dgame</caption>
       <image>https://mki1967.github.io/mki3dgame/img/mki3dgame-screenshot1-1280-720.png</image>
     </screenshot>
     <screenshot>
@@ -32,6 +36,11 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.16" date="2018-10-28">
+      <description>
+	<p>22 stages, new sky-box after each collected token.</p>
+      </description>
+    </release>
     <release version="1.15" date="2018-08-21">
       <description>
 	<p>New stage: x-tiles-stage, starting in paused state, and increased chance for the sky-box</p>
