@@ -141,7 +141,7 @@ func main() {
 	// Configure global settings
 	gl.Enable(gl.MULTISAMPLE) // probably not needed ...
 	gl.Enable(gl.DEPTH_TEST)
-	gl.DepthFunc(gl.LESS)
+	gl.DepthFunc(gl.LEQUAL)
 	gl.ClearColor(0.0, 0.0, 0.3, 1.0)
 
 	// init game structure from assets and the game window
