@@ -36,6 +36,11 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.17" date="2019-01-27">
+      <description>
+	<p>23 stages and lines are more visible than triangles </p>
+      </description>
+    </release>
     <release version="1.16" date="2018-10-28">
       <description>
 	<p>22 stages, new sky-box after each collected token.</p>
