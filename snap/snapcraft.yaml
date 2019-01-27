@@ -12,7 +12,7 @@ confinement: strict # devmode # use 'strict' once you have the right plugs and s
 apps:
   mki3dgame-snap:
     command: mki3dgame-snap-wrapper.bash
-    desktop: usr/share/applications/io.github.mki1967.mki3dgame.desktop
+    # desktop: usr/share/applications/io.github.mki1967.mki3dgame.desktop # using: snap/gui/mki3dgame-snap.desktop
     plugs:
       - x11
       - opengl
