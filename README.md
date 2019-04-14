@@ -18,6 +18,9 @@ This game uses stages designed with [MKI3D web 3D editor](https://mki1967.github
 
 In the game, you have to collect tokens scattered in the stages and avoid being captured by the monsters.
 
+See example [screencast at YouTube](https://youtu.be/Zb9lKAT-wMs)
+
+
 If you build the game from source code or use the AppImage (which is not sandboxed),
 then you can run the game with the path to your own assets directory as the command line argument.
 
