@@ -1,7 +1,7 @@
 package main
 
 import (
-	/// "fmt" // tests
+	"fmt" // tests
 	"io/ioutil"
 	// "errors"
 	"github.com/mki1967/go-mki3d/mki3d"
@@ -126,6 +126,7 @@ func (a *Assets) LoadIcons() ([]image.Image, error) {
 	return img, nil
 }
 
+/* old version
 func (a *Assets) LoadRandomStage() (*mki3d.Mki3dType, error) {
 	stages := len(a.Stages)
 	n := stages
@@ -140,6 +141,44 @@ func (a *Assets) LoadRandomStage() (*mki3d.Mki3dType, error) {
 	a.LastLoadedStage = r // record the index of the loaded stage
 	/// a.TestStages[r]= true /// for tests
 	/// testStages(a)
+	return mki3dPtr, err
+}
+*/
+
+func (a *Assets) randomShuffle(t *[]os.FileInfo) {
+	n := len(*t)
+
+	if n <= 1 { // nothing to shuffle
+		return
+	}
+
+	swap := func(i, j int) {
+		tmp := (*t)[i]
+		(*t)[i] = (*t)[j]
+		(*t)[j] = tmp
+	}
+
+	for i := 0; i < n; i++ {
+		j := i + rand.Intn(n-i)
+		swap(i, j)
+	}
+
+}
+
+func (a *Assets) LoadRandomStage() (*mki3d.Mki3dType, error) {
+
+	stages := len(a.Stages)
+	r := (a.LastLoadedStage + 1) % stages
+	if r == 0 {
+		fmt.Println("SHUFFLING ...")
+		a.randomShuffle(&(a.Stages)) // reshuffle for next round
+		for i, s := range a.Stages {
+			fmt.Println(i, s.Name())
+		}
+	}
+	mki3dPtr, err := a.load(StagesDir, a.Stages[r].Name())
+	fmt.Println(a.Stages[r].Name(), r)
+	a.LastLoadedStage = r // record the index of the loaded stage
 	return mki3dPtr, err
 }
 
