@@ -36,6 +36,14 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.19" date="2019-05-25">
+      <description>
+        <p>
+          You go through the stages in rounds,
+          where each round is a random permutation of stages.
+        </p>
+      </description>
+    </release>
     <release version="1.18" date="2019-05-01">
       <description>
         <p>24 stages</p>
@@ -43,42 +51,42 @@
     </release>
     <release version="1.17" date="2019-01-27">
       <description>
-	<p>23 stages and lines are more visible than triangles </p>
+        <p>23 stages and lines are more visible than triangles </p>
       </description>
     </release>
     <release version="1.16" date="2018-10-28">
       <description>
-	<p>22 stages, new sky-box after each collected token.</p>
+        <p>22 stages, new sky-box after each collected token.</p>
       </description>
     </release>
     <release version="1.15" date="2018-08-21">
       <description>
-	<p>New stage: x-tiles-stage, starting in paused state, and increased chance for the sky-box</p>
+        <p>New stage: x-tiles-stage, starting in paused state, and increased chance for the sky-box</p>
       </description>
     </release>
     <release version="1.14.1" date="2018-07-10">
       <description>
-	<p>GL_NV_shadow_samplers_cube extension enabled</p>
+        <p>GL_NV_shadow_samplers_cube extension enabled</p>
       </description>
     </release>
     <release version="1.14" date="2018-07-10">
       <description>
-	<p>displays nuber of stages and new stage: cubic-stage</p>
+        <p>displays nuber of stages and new stage: cubic-stage</p>
       </description>
     </release>
     <release version="1.13" date="2018-06-27">
       <description>
-	<p>new stage: electro-snail-stage</p>
+        <p>new stage: electro-snail-stage</p>
       </description>
     </release>
     <release version="1.12" date="2018-03-05">
       <description>
-	<p>fancy random coloured sky-box</p>
+        <p>fancy random coloured sky-box</p>
       </description>
     </release>
     <release version="1.11.4" date="2018-01-27">
       <description>
-	<p>zenity messages</p>
+        <p>zenity messages</p>
       </description>
     </release>
   </releases>

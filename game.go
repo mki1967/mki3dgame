@@ -3,14 +3,16 @@ package main
 import (
 	"fmt" // tests
 	// "errors"
+	"math"
+	"strconv"
+
 	"github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/go-gl/mathgl/mgl32"
 	"github.com/mki1967/go-mki3d/glmki3d"
 	"github.com/mki1967/go-mki3d/mki3d"
 	"github.com/mki1967/go-skybox/sbxgpu"
-	"math"
-	"strconv"
+
 	// "time"
 	_ "image/png"
 	"math/rand"
@@ -433,8 +435,12 @@ func (game *Mki3dGame) Update() {
 		t := strconv.FormatFloat(time, 'f', 2, 64)
 		s := strconv.FormatFloat(score, 'f', 2, 64)
 		ts := strconv.FormatFloat(game.TotalScore, 'f', 2, 64)
+		roundInfo := ""
+		if game.AssetsPtr.LastLoadedStage+1 == len(game.AssetsPtr.Stages) {
+			roundInfo = "\nROUND FINISHED !!!"
+		}
 		fmt.Println("STAGE FINISHED !!! Time:", time, " seconds, stage score: ", score, ", total: ", game.TotalScore, ".")
-		ZenityInfo("STAGE FINISHED !!! Time:"+t+" seconds,\n stage score: "+s+",\n total: "+ts+".", "5")
+		ZenityInfo("STAGE FINISHED !!! Time:"+t+" seconds,\n stage score: "+s+",\n total: "+ts+"."+roundInfo, "5")
 		game.NextStage()
 	} else { // update the player in the stage
 		if game.CurrentAction != nil {
