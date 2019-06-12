@@ -36,6 +36,13 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="1.20" date="2019-06-12">
+      <description>
+        <p>
+          This version has 25 stages.
+        </p>
+      </description>
+    </release>
     <release version="1.19" date="2019-05-25">
       <description>
         <p>
