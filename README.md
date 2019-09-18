@@ -7,9 +7,7 @@ This game uses stages designed with [MKI3D web 3D editor](https://mki1967.github
      - the [releases page](https://github.com/mki1967/mki3dgame/releases)
      - Sourceforge: [![Download mki3dgame](https://sourceforge.net/sflogo.php?type=15&group_id=2849958)](https://sourceforge.net/p/mki3dgame/) (Also a zip file with version compiled for Windows)
 
-* Snapped version is available at: 
-     - https://snapcraft.io/mki3dgame-snap [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/mki3dgame-snap)
-     - https://uappexplorer.com/snap/ubuntu/mki3dgame-snap
+* Snapped version is available at: [![mki3dgame-snap](https://snapcraft.io/mki3dgame-snap/badge.svg)](https://snapcraft.io/mki3dgame-snap)
 * Flatpak version is available on:
      - [Flathub](https://flathub.org/apps/details/io.github.mki1967.mki3dgame)
        <a href="https://flathub.org/apps/details/io.github.mki1967.mki3dgame"><img height="51" alt="Download on Flathub" src="https://flathub.org/assets/badges/flathub-badge-en.svg"/></a>
