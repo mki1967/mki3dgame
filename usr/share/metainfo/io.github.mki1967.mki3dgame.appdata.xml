@@ -8,10 +8,8 @@
   <summary>A simple OpenGL game of searching for tokens in 3D stages</summary>
   <description>
     <p>
-      Searching for tokens in 3D stages amongst flying monsters.
-    </p>
-    <p>
-      The stages, monsters and tokens are
+      MKI3D Game is a game of searching in 3D stages amongst flying monsters.
+      The displayed objects such as stages and monsters are
       designed with MKI3D RAPID MODELLER.
     </p>
   </description>
@@ -19,6 +17,10 @@
   <url type="bugtracker">https://github.com/mki1967/mki3dgame/issues</url>
   <url type="help">https://github.com/mki1967/mki3dgame/blob/master/README.md</url>
   <screenshots>
+    <screenshot>
+      <caption>A stage of mki3dgame</caption>
+      <image>https://mki1967.github.io/mki3dgame/img/stage1_textured_1280x720.png</image>
+    </screenshot>
     <screenshot type="default">
       <caption>A stage of mki3dgame</caption>
       <image>https://mki1967.github.io/mki3dgame/img/wiatraki_1280x720.png</image>
@@ -29,25 +31,17 @@
     </screenshot>
     <screenshot>
       <caption>A stage of mki3dgame</caption>
-      <image>https://mki1967.github.io/mki3dgame/img/mki3dgame-screenshot-1280x720.png</image>
+      <image>https://mki1967.github.io/mki3dgame/img/sfix_x_3_1280x720.png</image>
     </screenshot>
   </screenshots>
   <provides>
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
-    <release version="1.20" date="2019-06-12">
+    <release version="2.00" date="2019-09-24">
       <description>
         <p>
-          This version has 25 stages.
-        </p>
-      </description>
-    </release>
-    <release version="1.19" date="2019-05-25">
-      <description>
-        <p>
-          You go through the stages in rounds,
-          where each round is a random permutation of stages.
+          This version contains textures.
         </p>
       </description>
     </release>
