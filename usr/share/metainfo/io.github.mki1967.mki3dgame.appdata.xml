@@ -38,6 +38,13 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
+    <release version="2.01" date="2019-09-30">
+      <description>
+        <p>
+          More textures have been added to the stages.
+        </p>
+      </description>
+    </release>
     <release version="2.00" date="2019-09-24">
       <description>
         <p>
