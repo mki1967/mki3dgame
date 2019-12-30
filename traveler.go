@@ -7,8 +7,10 @@ import (
 	"math"
 )
 
-const TravelerMovSpeed = 15 // units per second
-const TravelerRotSpeed = 90 // degrees per second
+const TravelerAcceleration = 16 // units per second*second
+const TravelerInitMovSpeed = 1  // units per second
+const TravelerMaxMovSpeed = 40  // units per second
+const TravelerRotSpeed = 90     // degrees per second
 
 type Traveler struct {
 	Position   mgl32.Vec3 // position
@@ -70,7 +72,7 @@ func (t *Traveler) ClipToBox(vmin, vmax mgl32.Vec3) {
 func MakeTraveler(position mgl32.Vec3) *Traveler {
 	var t Traveler
 	t.Position = position
-	t.MovSpeed = TravelerMovSpeed
+	t.MovSpeed = TravelerInitMovSpeed
 	t.RotSpeed = TravelerRotSpeed
 	return &t
 }
@@ -80,4 +82,12 @@ func (t *Traveler) Update(g *Mki3dGame) {
 		t.Position = t.CapturedBy.Position
 		g.StageDSPtr.UniPtr.ViewUni = g.TravelerPtr.ViewMatrix()
 	}
+}
+
+func (t *Traveler) UpdateSpeed(timeDelta float64) {
+	t.MovSpeed = math.Min(t.MovSpeed+timeDelta*TravelerAcceleration, TravelerMaxMovSpeed)
+}
+
+func (t *Traveler) ResetSpeed() {
+	t.MovSpeed = TravelerInitMovSpeed
 }

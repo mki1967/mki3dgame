@@ -74,42 +74,49 @@ func (g *Mki3dGame) SetAction(action func()) {
 
 func (g *Mki3dGame) CancelAction() {
 	g.CurrentAction = nil
+	g.TravelerPtr.ResetSpeed()
 }
 
 func (g *Mki3dGame) ActionMoveForward() {
 	d := float32(g.TravelerPtr.MovSpeed * g.LastTimeDelta)
 	g.TravelerPtr.Move(0, 0, d)
 	g.TravelerPtr.ClipToBox(g.VMin, g.VMax)
+	g.TravelerPtr.UpdateSpeed(g.LastTimeDelta)
 }
 
 func (g *Mki3dGame) ActionMoveBackward() {
 	d := float32(g.TravelerPtr.MovSpeed * g.LastTimeDelta)
 	g.TravelerPtr.Move(0, 0, -d)
 	g.TravelerPtr.ClipToBox(g.VMin, g.VMax)
+	g.TravelerPtr.UpdateSpeed(g.LastTimeDelta)
 }
 
 func (g *Mki3dGame) ActionMoveLeft() {
 	d := float32(g.TravelerPtr.MovSpeed * g.LastTimeDelta)
 	g.TravelerPtr.Move(-d, 0, 0)
 	g.TravelerPtr.ClipToBox(g.VMin, g.VMax)
+	g.TravelerPtr.UpdateSpeed(g.LastTimeDelta)
 }
 
 func (g *Mki3dGame) ActionMoveRight() {
 	d := float32(g.TravelerPtr.MovSpeed * g.LastTimeDelta)
 	g.TravelerPtr.Move(d, 0, 0)
 	g.TravelerPtr.ClipToBox(g.VMin, g.VMax)
+	g.TravelerPtr.UpdateSpeed(g.LastTimeDelta)
 }
 
 func (g *Mki3dGame) ActionMoveUp() {
 	d := float32(g.TravelerPtr.MovSpeed * g.LastTimeDelta)
 	g.TravelerPtr.Move(0, d, 0)
 	g.TravelerPtr.ClipToBox(g.VMin, g.VMax)
+	g.TravelerPtr.UpdateSpeed(g.LastTimeDelta)
 }
 
 func (g *Mki3dGame) ActionMoveDown() {
 	d := float32(g.TravelerPtr.MovSpeed * g.LastTimeDelta)
 	g.TravelerPtr.Move(0, -d, 0)
 	g.TravelerPtr.ClipToBox(g.VMin, g.VMax)
+	g.TravelerPtr.UpdateSpeed(g.LastTimeDelta)
 }
 
 func (g *Mki3dGame) ActionRotLeft() {
