@@ -26,7 +26,7 @@ rsync -av ../snap .
 rsync -av ../assets .
 cp ../mki3dgame .
 echo 'Building snap ...'
-snapcraft
+snapcraft --use-lxd
 # mv mki3dgame-snap_*.snap ../
 popd    # return to the directory
 
