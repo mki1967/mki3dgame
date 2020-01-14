@@ -32,3 +32,5 @@ _testmain.go
 # build directories 
 /build-AppImage
 /build-snap
+# test directories
+/test
