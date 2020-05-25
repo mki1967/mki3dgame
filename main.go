@@ -164,6 +164,8 @@ func main() {
 	ZenityInfo(firstLine+"\nPRESS THE MOUSE ON SCREEN SECTORS OR USE THE KEYS.\n\nPRESS 'H' FOR HELP. ", "6")
 	// doInMainThread = ZenityHelp
 	game.Paused.Set(true)
+
+	game.CheckGamepad() // test
 	// main loop
 	for !window.ShouldClose() {
 
@@ -186,6 +188,7 @@ func main() {
 			// game.Paused.Set(game.PauseRequest.TestAndCancel()) // check for pause -- new version
 			glfw.PollEvents()
 		}
+		game.CheckGamepad() // test
 		game.Redraw()
 
 	}

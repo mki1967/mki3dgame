@@ -65,6 +65,8 @@ type Mki3dGame struct {
 	CurrentAction func()                                     // current action of the player
 	ActionSectors [VerticalSectors][HorizontalSectors]func() // functions of the mouse actions
 
+	LastGamepadAction func() // last action invoked by the gamepad
+
 	// PauseRequest Flag // set by a goroutine to request pause
 	// Paused bool // true if game is paused
 	Paused SharedBool // true if game is paused - shared version
