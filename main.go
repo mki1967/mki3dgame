@@ -165,7 +165,7 @@ func main() {
 	// doInMainThread = ZenityHelp
 	game.Paused.Set(true)
 
-	game.CheckGamepad() // test
+	// game.CheckGamepad() // test
 	// main loop
 	for !window.ShouldClose() {
 

@@ -10,6 +10,28 @@ import (
 // "math/rand"
 )
 
+type ActionIndex = uint8
+
+const (
+	ActionNIL = ActionIndex(iota)
+
+	ActionMF
+	ActionMB
+	ActionMU
+	ActionMD
+	ActionML
+	ActionMR
+
+	ActionRU
+	ActionRD
+	ActionRL
+	ActionRR
+
+	ActionLV
+)
+
+const NumberOfActions = ActionLV + 1
+
 func (g *Mki3dGame) InitActionSectors() {
 	mf := func() {
 		g.ActionMoveForward()
@@ -50,6 +72,12 @@ func (g *Mki3dGame) InitActionSectors() {
 		g.ActionLevel()
 	}
 
+	g.ActionArray = [12]func(){ // the same sequence as in ActionIndex
+		nil,
+		mf, mb, mu, md, ml, mr, // moves
+		ru, rd, rl, rr, // rotations
+		lv, // level
+	}
 	g.ActionSectors = [6][6]func(){
 		{mf, mf, mu, mu, mf, mf},
 		{mf, mf, ru, ru, mf, mf},
@@ -75,6 +103,7 @@ func (g *Mki3dGame) SetAction(action func()) {
 func (g *Mki3dGame) CancelAction() {
 	g.CurrentAction = nil
 	g.TravelerPtr.ResetSpeed()
+	g.JustCollected = false // stop celebrations
 }
 
 func (g *Mki3dGame) ActionMoveForward() {

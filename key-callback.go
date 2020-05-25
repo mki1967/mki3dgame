@@ -15,7 +15,6 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 	if action == glfw.Release {
 		if action == glfw.Release {
 			g.CancelAction()
-			g.JustCollected = false // stop celebrations
 			return
 		}
 
