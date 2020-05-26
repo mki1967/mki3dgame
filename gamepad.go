@@ -8,6 +8,7 @@ import (
 	// "math"
 	// "github.com/mki1967/go-mki3d/mki3d"
 	// "github.com/mki1967/go-mki3d/glmki3d"
+	// "time"
 )
 
 func (g *Mki3dGame) CheckGamepad() {

@@ -164,6 +164,8 @@ func (game *Mki3dGame) Init() (err error) {
 	game.StageStartingTime = game.LastProbedTime
 	game.LastTimeDelta = 0
 
+	game.Paused.Set(true) // start in paused state
+
 	return nil
 }
 
