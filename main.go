@@ -179,15 +179,16 @@ func main() {
 		// if( game.Paused ) { // old version
 		if game.Paused.Get() { // new version
 			game.CancelAction()
-			glfw.WaitEvents()
-			game.ProbeTime()
+			// glfw.WaitEvents()
+			time.Sleep(time.Second / 2)
+			game.ProbeTime() // refresh last time
 		} else {
 			game.ProbeTime()
 			game.Update()
 			// game.Paused = game.PauseRequest.TestAndCancel() // check for pause
 			// game.Paused.Set(game.PauseRequest.TestAndCancel()) // check for pause -- new version
-			glfw.PollEvents()
 		}
+		glfw.PollEvents()
 		game.CheckGamepad() // test
 		game.Redraw()
 

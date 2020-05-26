@@ -1,7 +1,7 @@
 package main
 
 import (
-	// "fmt"
+	"fmt"
 	// "github.com/go-gl/gl/v3.3-core/gl"
 	"github.com/go-gl/glfw/v3.3/glfw"
 	// "github.com/go-gl/mathgl/mgl32"
@@ -28,27 +28,47 @@ func (g *Mki3dGame) CheckGamepad() {
 			nextAction = ActionRR
 
 		case gamepadStatePtr.Axes[glfw.AxisRightY] < -0.5:
-			nextAction = ActionRU
-		case gamepadStatePtr.Axes[glfw.AxisRightY] > 0.5:
 			nextAction = ActionRD
+		case gamepadStatePtr.Axes[glfw.AxisRightY] > 0.5:
+			nextAction = ActionRU
 
 		case gamepadStatePtr.Axes[glfw.AxisLeftY] < -0.5:
-			nextAction = ActionMU
+			nextAction = ActionMF
 		case gamepadStatePtr.Axes[glfw.AxisLeftY] > 0.5:
-			nextAction = ActionMD
+			nextAction = ActionMB
 
 		case gamepadStatePtr.Axes[glfw.AxisLeftX] < -0.5:
 			nextAction = ActionML
 		case gamepadStatePtr.Axes[glfw.AxisLeftX] > 0.5:
 			nextAction = ActionMR
 
-		case gamepadStatePtr.Axes[glfw.AxisRightTrigger] > -0.75:
+		case gamepadStatePtr.Axes[glfw.AxisRightTrigger] > -0.95:
 			nextAction = ActionMF
-		case gamepadStatePtr.Axes[glfw.AxisLeftTrigger] > -0.75:
+		case gamepadStatePtr.Axes[glfw.AxisLeftTrigger] > -0.95:
 			nextAction = ActionMB
+
+		case gamepadStatePtr.Buttons[glfw.ButtonDpadUp] == glfw.Press:
+			nextAction = ActionMU
+		case gamepadStatePtr.Buttons[glfw.ButtonDpadDown] == glfw.Press:
+			nextAction = ActionMD
+
+		case gamepadStatePtr.Buttons[glfw.ButtonDpadLeft] == glfw.Press:
+			nextAction = ActionML
+		case gamepadStatePtr.Buttons[glfw.ButtonDpadRight] == glfw.Press:
+			nextAction = ActionMR
 
 		case gamepadStatePtr.Buttons[glfw.ButtonA] == glfw.Press:
 			nextAction = ActionLV
+
+		case gamepadStatePtr.Buttons[glfw.ButtonStart] == glfw.Press:
+			fmt.Println("RELOADING RANDOM STAGE ...")
+			ZenityInfo("NEXT RANDOM STAGE ...", "1")
+			g.NextStage()
+
+		}
+
+		if nextAction != ActionNIL {
+			g.Paused.Set(false) // new version
 		}
 
 		if nextAction == g.LastGamepadAction {
