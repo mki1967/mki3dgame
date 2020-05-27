@@ -39,10 +39,10 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
-    <release version="2.05" date="2020-04-25">
+    <release version="3.00" date="2020-05-27">
       <description>
         <p>
-          Version with 29 stages.
+          Since this version, gamepad can be used.
         </p>
       </description>
     </release>
