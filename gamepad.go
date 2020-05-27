@@ -69,7 +69,8 @@ func (g *Mki3dGame) CheckGamepad() {
 		}
 
 		if nextAction != ActionNIL {
-			g.Paused.Set(false) // new version
+			g.Paused = false // new version for single-thread version
+			g.LastActivityTime = glfw.GetTime()
 		}
 
 		if nextAction == g.LastGamepadAction {

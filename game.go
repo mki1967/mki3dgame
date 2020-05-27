@@ -62,6 +62,8 @@ type Mki3dGame struct {
 	LastProbedTime    float64 // game global time probing
 	LastTimeDelta     float64 // game global time probing
 
+	LastActivityTime float64 // recorded time of last activity for the auto-pause
+
 	CurrentAction func()                                     // current action of the player
 	ActionSectors [VerticalSectors][HorizontalSectors]func() // functions of the mouse actions
 	ActionArray   [NumberOfActions]func()                    // indexed functions of the actions
@@ -69,10 +71,10 @@ type Mki3dGame struct {
 	LastGamepadAction ActionIndex // last action invoked by the gamepad
 
 	// PauseRequest Flag // set by a goroutine to request pause
-	// Paused bool // true if game is paused
-	Paused SharedBool // true if game is paused - shared version
+	Paused bool // true if game is paused -- used again for the single-thread version
+	// Paused SharedBool // true if game is paused - shared version
 
-	WasAction Flag // set ech time the user action is executed
+	// WasAction Flag // set ech time the user action is executed -- not used in the single-thread version
 
 	JustCollected bool // token has been just collected! Do some clebrations in Redraw ...
 
@@ -118,13 +120,13 @@ func MakeEmptyGame(pathToAssets string, window *glfw.Window) (*Mki3dGame, error)
 	window.SetMouseButtonCallback(game.Mki3dMouseButtonCallback)
 
 	// game.PauseRequest = MakeFlag()
-	game.WasAction = MakeFlag()
+	// game.WasAction = MakeFlag() // -- not used in the single-thread version
 
-	game.Paused = MakeSharedBool() // new version
+	// game.Paused = MakeSharedBool() // new version -- not used in the single-thread version
 
 	game.Skybox = sbxgpu.NewSbxGpu() // init skybox shader
 
-	go game.EcoFreezer() // run concurrent eco-freezer goroutine
+	// go game.EcoFreezer() // run concurrent eco-freezer goroutine -- no goroutines in the single-thread version
 
 	return &game, nil
 
@@ -164,7 +166,7 @@ func (game *Mki3dGame) Init() (err error) {
 	game.StageStartingTime = game.LastProbedTime
 	game.LastTimeDelta = 0
 
-	game.Paused.Set(true) // start in paused state
+	game.Paused = true // start in paused state
 
 	return nil
 }
@@ -495,8 +497,25 @@ func (game *Mki3dGame) Redraw() {
 		gl.Disable(gl.DEPTH_TEST)
 		game.SectorsDSPtr.DrawStage()
 		gl.Enable(gl.DEPTH_TEST)
+		game.tryAutoPause()
 	} else {
-		game.WasAction.Set() // set for EcoFreezer
+		game.LastActivityTime = glfw.GetTime()
+		// game.WasAction.Set() // set for EcoFreezer -- not used in the single-thread version
 	}
 
+}
+
+const autoPauseTimeDelta = 15 // seconds since last activity for auto-pause
+
+func (game *Mki3dGame) tryAutoPause() {
+	if game.Paused {
+		return // do not pause if already paused
+	}
+
+	if glfw.GetTime()-game.LastActivityTime > autoPauseTimeDelta {
+		game.Paused = true
+		fmt.Println("AUTO-PAUSE")
+		ZenityInfo("AUTO-PAUSE", "1")
+
+	}
 }

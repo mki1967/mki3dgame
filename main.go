@@ -163,7 +163,9 @@ func main() {
 	fmt.Println(firstLine + helpText)
 	ZenityInfo(firstLine+"\nPRESS THE MOUSE ON SCREEN SECTORS OR USE THE KEYS.\n\nPRESS 'H' FOR HELP. ", "6")
 	// doInMainThread = ZenityHelp
-	game.Paused.Set(true)
+
+	game.Paused = true // start in the paused state
+	game.ProbeTime()
 
 	// game.CheckGamepad() // test
 	// main loop
@@ -177,7 +179,7 @@ func main() {
 		}
 
 		// if( game.Paused ) { // old version
-		if game.Paused.Get() { // new version
+		if game.Paused { // new version
 			game.CancelAction()
 			// glfw.WaitEvents()
 			time.Sleep(time.Second / 2)

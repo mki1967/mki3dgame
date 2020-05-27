@@ -22,8 +22,8 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 
 	if action == glfw.Press {
 		// g.Paused = false // old version
-		g.Paused.Set(false) // new version
-
+		g.Paused = false // new version
+		g.LastActivityTime = glfw.GetTime()
 		// g := GamePtr // short name
 		switch {
 
@@ -92,7 +92,7 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 			ZenityHelp()
 		case key == glfw.KeyP && mods == 0: /* PAUSE */
 			// g.PauseRequest.Set()
-			g.Paused.Set(true)
+			g.Paused = true
 			fmt.Println("PAUSED")
 			ZenityInfo("PAUSED", "1")
 		case key == glfw.KeyQ && mods == 0: /* QUERY REMAINING TOKENS */

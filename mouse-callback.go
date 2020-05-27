@@ -18,8 +18,8 @@ func (g *Mki3dGame) Mki3dMouseButtonCallback(w *glfw.Window, button glfw.MouseBu
 	}
 
 	if action == glfw.Press {
-		// g.Paused = false // old version
-		g.Paused.Set(false) // new version
+		g.Paused = false // new version
+		g.LastActivityTime = glfw.GetTime()
 		width, height := w.GetSize()
 		fx, fy := w.GetCursorPos()
 		x := int(fx)
