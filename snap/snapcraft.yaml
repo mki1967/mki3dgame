@@ -18,7 +18,7 @@ apps:
       - x11
       - opengl
       - wayland
-      - joystick
+      - joystick  # snap connect mki3dgame-snap:joystick
 
 parts:
   mki3dgame:
