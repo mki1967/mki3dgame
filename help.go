@@ -1,32 +1,16 @@
 package main
 
 const helpText = `
-MKI3DGAME (see: https://github.com/mki1967/mki3dgame )
-======================================================
+MKI3D GAME (see: https://github.com/mki1967/mki3dgame )
+=======================================================
 
 Collect the tokens and avoid the monsters.
 (You can be captured by a monster ;-) 
 
-Use the keyboard:
 
-Key press actions:
-------------------
+PRESS THE MOUSE BUTTON ON THE SCREEN SECTORS
 
-  H - this help message
-  Arrow keys - rotate observer
-  Shift + Arrow keys  - move observer sideways
-  Space - set the player upright
-  B, F - move observer backward or forward
-  L - set the diffuse light direction perpendicular to the screen
-  P - pause the game
-  X - reload random stage
-  S - toggle SKYBOX ON/OFF
-  N - new SKYBOX
-
-
-Or press the mouse on the screen sectors:
-
-Sectors action layout:
+Action-sectors layout:
 ----------------------
 +---------+---------+---------+
 | MF      |   MU    | MF      |
@@ -45,4 +29,33 @@ Sectors action layout:
 MF, MB, MU, MD, ML, MR - move forward, backward, up, down, left and right
 RU, RD, RL, RR - rotate up, down, left and right
 LV - set the player upright, then align the horizontal rotation to the right angle
+
+OR USE THE KEYBOARD
+
+Key press actions:
+------------------
+
+  H - this help message
+  Arrow keys - rotate observer
+  Shift + Arrow keys  - move observer sideways
+  Space - set the player upright and then align with the horizontal axes
+  B, F - move observer backward or forward
+  L - set the diffuse light direction perpendicular to the screen
+  P - pause the game
+  X - load next random stage
+  Q - display your score and the number of remaining tokens
+  S - toggle SKYBOX ON/OFF
+  N - new SKYBOX
+
+OR USE THE GAMEPAD:
+
+Gamepad actions:
+----------------
+
+  Left Joystick  - rotate
+  Button A   - set the player upright and then align with the horizontal axes
+  Right Joystick - move forward/backward/left/right
+  Right/Left Triger - forward/backward
+  Dpad Buttons - move on the screen plane 
+  Button Start -  load next random stage
 `
