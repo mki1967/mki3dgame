@@ -17,6 +17,8 @@ apps:
     plugs:
       - x11
       - opengl
+      - wayland
+      - joystick
 
 parts:
   mki3dgame:
