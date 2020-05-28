@@ -19,6 +19,7 @@ apps:
       - opengl
       - wayland
       - joystick  # snap connect mki3dgame-snap:joystick
+      - screen-inhibit-control
 
 parts:
   mki3dgame:
