@@ -10,7 +10,7 @@ import (
 // "math/rand"
 )
 
-type ActionIndex  uint8
+type ActionIndex uint8
 
 const (
 	ActionNIL = ActionIndex(iota)
