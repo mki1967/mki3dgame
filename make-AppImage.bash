@@ -17,6 +17,8 @@ done;
 ./make-mki3game.bash
 
 echo 'Preparing for AppImage ...'
+
+rm -rf build-AppImage # start with fresh directory
 mkdir build-AppImage # do everything in the 'build' directory
 
 

@@ -15,7 +15,9 @@ done;
 
 ./make-mki3game.bash
 
-echo 'Preparing for AppImage ...'
+echo 'Preparing for snap ...'
+
+rm -rf build-snap # start with fresh directory
 mkdir build-snap # do everything in the 'build' directory
 
 
