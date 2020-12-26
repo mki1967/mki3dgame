@@ -39,10 +39,10 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
-    <release version="3.01" date="2020-07-04">
+    <release version="3.02" date="2020-12-26">
       <description>
         <p>
-          This version has 30 stages and more textures.
+          This version has 31 stages and 3 shapes of monsters.
         </p>
       </description>
     </release>
