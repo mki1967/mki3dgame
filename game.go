@@ -147,7 +147,7 @@ func (game *Mki3dGame) Init() (err error) {
 		return err
 	}
 
-	err = game.InitToken()
+	err = game.InitToken(width, height)
 	if err != nil {
 		return err
 	}
@@ -203,7 +203,7 @@ func (game *Mki3dGame) InitSectors() error {
 }
 
 // Load token shape and init the tokenDSPtr.
-func (game *Mki3dGame) InitToken() error {
+func (game *Mki3dGame) InitToken(width int, height int) error {
 
 	tokenPtr, err := game.AssetsPtr.LoadRandomToken()
 	if err != nil {
@@ -215,7 +215,10 @@ func (game *Mki3dGame) InitToken() error {
 		return err
 	}
 
-	tokenDataShaderPtr.UniPtr.SetSimple()
+	// tokenDataShaderPtr.UniPtr.SetSimple()
+	tokenDataShaderPtr.UniPtr.SetProjectionFromMki3d(tokenDataShaderPtr.Mki3dPtr, width, height)
+	tokenDataShaderPtr.UniPtr.SetViewFromMki3d(tokenDataShaderPtr.Mki3dPtr)
+	tokenDataShaderPtr.UniPtr.SetLightFromMki3d(tokenDataShaderPtr.Mki3dPtr)
 
 	if game.TokenDSPtr != nil {
 		game.TokenDSPtr.DeleteData() // free old GL buffers
@@ -469,16 +472,19 @@ func (game *Mki3dGame) NextStage() {
 // Redraw the game stage
 func (game *Mki3dGame) Redraw() {
 
-	gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT) // to be moved to redraw ?
 	if game.JustCollected {
-		gl.ClearColor(1.0, 0.4, 0.4, 1.0)
+		gl.ClearColor(0.0, 0.4, 0.4, 1.0 )
 		gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
+		game.TokenDSPtr.UniPtr.SetModelPosition(mgl32.Vec3{0,0,0})
+
+		game.TokenDSPtr.DrawStage()
 		game.Skybox.RenderRandomCube()
 		game.withSkybox = true
 		// game.JustCollected = false
 		// time.Sleep(time.Millisecond * 500)
 	} else {
 		// draw stage
+		gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT) // to be moved to redraw ?
 		game.StageDSPtr.SetBackgroundColor()
 		game.StageDSPtr.DrawStage()
 		// draw frame
