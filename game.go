@@ -26,6 +26,8 @@ var NumberOfMonsters = 20
 
 var NumberOfTokens = 10
 
+var TokenInfoPositions = squareSpiral( NumberOfTokens )
+
 const VerticalSectors = 6   // vertical dimmension of sectors array
 const HorizontalSectors = 6 // horizontal  dimmension of sectors array
 
@@ -478,6 +480,10 @@ func (game *Mki3dGame) Redraw() {
 		game.TokenDSPtr.UniPtr.SetModelPosition(mgl32.Vec3{0,0,0})
 
 		game.TokenDSPtr.DrawStage()
+		for i:=0; i< game.TokensRemaining; i++ {
+			game.TokenDSPtr.UniPtr.SetModelPosition( TokenInfoPositions[i] )
+			game.TokenDSPtr.DrawModel()			
+		}
 		game.Skybox.RenderRandomCube()
 		game.withSkybox = true
 		// game.JustCollected = false
@@ -498,7 +504,7 @@ func (game *Mki3dGame) Redraw() {
 		}
 
 	}
-	if game.CurrentAction == nil {
+	if game.CurrentAction == nil && ! game.JustCollected {
 		// draw sectors
 		gl.Disable(gl.DEPTH_TEST)
 		game.SectorsDSPtr.DrawStage()
