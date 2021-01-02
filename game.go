@@ -476,10 +476,9 @@ func (game *Mki3dGame) Redraw() {
 
 	if game.JustCollected {
 		gl.ClearColor(0.0, 0.4, 0.4, 1.0 )
-		gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 		game.TokenDSPtr.UniPtr.SetModelPosition(mgl32.Vec3{0,0,0})
-
 		game.TokenDSPtr.DrawStage()
+		gl.Clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT)
 		for i:=0; i< game.TokensRemaining; i++ {
 			game.TokenDSPtr.UniPtr.SetModelPosition( TokenInfoPositions[i] )
 			game.TokenDSPtr.DrawModel()			
