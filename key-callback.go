@@ -95,6 +95,10 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 			g.Paused = true
 			fmt.Println("PAUSED")
 			ZenityInfo("PAUSED", "1")
+
+		case key == glfw.KeyQ && mods == glfw.ModShift: /* QUIT */
+			g.Quit = true
+
 		case key == glfw.KeyQ && mods == 0: /* QUERY REMAINING TOKENS */
 			ts := strconv.FormatFloat(g.TotalScore, 'f', 2, 64)
 			ZenityInfo(

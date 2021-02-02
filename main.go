@@ -167,9 +167,10 @@ func main() {
 	game.Paused = true // start in the paused state
 	game.ProbeTime()
 
+	glfw.SwapInterval(1) // try to avoid tearing ???
 	// game.CheckGamepad() // test
 	// main loop
-	for !window.ShouldClose() {
+	for !window.ShouldClose() && !game.Quit {
 
 		// Maintenance
 		window.SwapBuffers()

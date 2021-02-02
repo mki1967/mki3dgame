@@ -35,6 +35,7 @@ const skyboxChance = 0.25 // the chance of having withSkybox==true on the new st
 
 // data structure for the game
 type Mki3dGame struct {
+	Quit bool
 	// assets info
 	AssetsPtr *Assets
 	// GLFW data
