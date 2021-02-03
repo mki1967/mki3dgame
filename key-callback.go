@@ -11,6 +11,8 @@ import (
 	// "github.com/mki1967/go-mki3d/glmki3d"
 )
 
+var oldIsZenity bool
+
 func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, action glfw.Action, mods glfw.ModifierKey) {
 	if action == glfw.Release {
 		if action == glfw.Release {
@@ -128,12 +130,15 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 				mode := monitor.GetVideoMode()
 				w.SetMonitor(monitor, 0, 0, mode.Width, mode.Height, mode.RefreshRate)
 				g.FullScreen = true
+				oldIsZenity = IsZenity
+				IsZenity = false
 			} else {
 				// unset full-screen
 				monitor := glfw.GetPrimaryMonitor()
 				mode := monitor.GetVideoMode()
 				w.SetMonitor(nil, g.PosX, g.PosY, g.SizeWidth, g.SizeHeight, mode.RefreshRate)
 				g.FullScreen = false
+				IsZenity = oldIsZenity
 			}
 
 		}
