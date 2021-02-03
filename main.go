@@ -169,9 +169,9 @@ func main() {
 
 	glfw.SwapInterval(1) // try to avoid tearing ???
 	// game.CheckGamepad() // test
+
 	// main loop
 	for !window.ShouldClose() && !game.Quit {
-
 		// Maintenance
 		window.SwapBuffers()
 		if doInMainThread != nil {

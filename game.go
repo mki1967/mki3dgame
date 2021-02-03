@@ -35,7 +35,14 @@ const skyboxChance = 0.25 // the chance of having withSkybox==true on the new st
 
 // data structure for the game
 type Mki3dGame struct {
+	// Quit the game
 	Quit bool
+
+	// is full screen mode?
+	FullScreen bool
+	// Saved position and size of non-fullscreen window
+	PosX, PosY            int
+	SizeWidth, SizeHeight int
 	// assets info
 	AssetsPtr *Assets
 	// GLFW data

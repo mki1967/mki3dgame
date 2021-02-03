@@ -119,6 +119,23 @@ func (g *Mki3dGame) KeyCallback(w *glfw.Window, key glfw.Key, scancode int, acti
 			g.Skybox.RenderRandomCube()
 			g.withSkybox = true
 
+		case key == glfw.KeyF11: /* toggle full-screen */
+			if !g.FullScreen {
+				/// set full-screen
+				g.PosX, g.PosY = w.GetPos()
+				g.SizeWidth, g.SizeHeight = w.GetSize()
+				monitor := glfw.GetPrimaryMonitor()
+				mode := monitor.GetVideoMode()
+				w.SetMonitor(monitor, 0, 0, mode.Width, mode.Height, mode.RefreshRate)
+				g.FullScreen = true
+			} else {
+				// unset full-screen
+				monitor := glfw.GetPrimaryMonitor()
+				mode := monitor.GetVideoMode()
+				w.SetMonitor(nil, g.PosX, g.PosY, g.SizeWidth, g.SizeHeight, mode.RefreshRate)
+				g.FullScreen = false
+			}
+
 		}
 	}
 }

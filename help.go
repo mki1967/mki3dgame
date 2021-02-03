@@ -46,6 +46,8 @@ Key press actions:
   Q - display your score and the number of remaining tokens
   S - toggle SKYBOX ON/OFF
   N - new SKYBOX
+  Shift+Q - quit
+  F11 - toggle full-screen
 
 OR USE THE GAMEPAD:
 
