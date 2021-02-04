@@ -39,10 +39,10 @@
     <binary>io.github.mki1967.mki3dgame</binary>
   </provides>
   <releases>
-    <release version="3.03" date="2021-01-05">
+    <release version="3.04" date="2021-01-05">
       <description>
         <p>
-          This version displays graphical info about remaining items.
+          In this version you can toggle full-screen with F11 and quit with SHIFT+Q.
         </p>
       </description>
     </release>
