@@ -13,6 +13,9 @@
       designed with MKI3D RAPID MODELLER.
     </p>
   </description>
+
+  <launchable type="desktop-id">io.github.mki1967.mki3dgame.desktop</launchable>
+  
   <developer_name>Marcin Kik</developer_name>
   <url type="homepage">https://mki1967.github.io/mki3dgame</url>
   <url type="bugtracker">https://github.com/mki1967/mki3dgame/issues</url>
